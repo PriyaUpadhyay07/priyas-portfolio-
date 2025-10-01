@@ -1,71 +1,91 @@
-import { Backpack, Coffee, Palette, BookOpen, Pen, Sparkles, Star, Laptop } from "lucide-react";
+import { Backpack, Coffee, Pen, Star, Laptop } from "lucide-react";
+import avatarImage from "@/assets/avatar-3d.png";
 
 const Hero = () => {
-  const stickers = [
-    { Icon: Backpack, delay: "0s", position: "top-20 left-10" },
-    { Icon: Coffee, delay: "0.5s", position: "top-40 right-20" },
-    { Icon: Palette, delay: "1s", position: "bottom-32 left-20" },
-    { Icon: BookOpen, delay: "1.5s", position: "top-60 left-1/4" },
-    { Icon: Pen, delay: "2s", position: "bottom-40 right-32" },
-    { Icon: Sparkles, delay: "2.5s", position: "top-32 right-40" },
-    { Icon: Star, delay: "3s", position: "bottom-20 left-1/3" },
-    { Icon: Laptop, delay: "3.5s", position: "top-1/2 right-20" },
+  // Main stickers around avatar - only 5 colorful ones
+  const heroStickers = [
+    { Icon: Backpack, delay: "0s", position: "top-24 left-16", color: "#FFB6C1" },
+    { Icon: Coffee, delay: "0.5s", position: "top-20 right-24", color: "#D2691E" },
+    { Icon: Pen, delay: "1s", position: "bottom-28 left-20", color: "#FFD700" },
+    { Icon: Star, delay: "1.5s", position: "top-1/2 right-16", color: "#FFF176" },
+    { Icon: Laptop, delay: "2s", position: "bottom-24 right-28", color: "#87CEEB" },
   ];
 
   return (
     <section id="home" className="min-h-screen flex items-center justify-center relative overflow-hidden pt-20">
-      {/* Animated curved text */}
-      <div className="absolute top-32 left-0 w-full overflow-hidden">
-        <div className="animate-move-text whitespace-nowrap text-muted-foreground text-sm font-light tracking-wider">
-          UI/UX Designer · Creative Problem Solver · Design Enthusiast · Turning Ideas into Experiences ·
-        </div>
+      {/* Animated curved text - behind everything */}
+      <div className="absolute inset-0 pointer-events-none overflow-hidden z-0">
+        <svg className="absolute inset-0 w-full h-full" viewBox="0 0 1200 800" preserveAspectRatio="none">
+          <path
+            id="curvePath"
+            d="M -200,600 Q 300,200 600,400 T 1400,300"
+            fill="none"
+            stroke="none"
+          />
+          <text className="curved-text-animation" fill="#000000" fontSize="42" fontWeight="900" letterSpacing="4">
+            <textPath href="#curvePath" startOffset="0%">
+              <animate attributeName="startOffset" from="-50%" to="150%" dur="20s" repeatCount="indefinite" />
+              UI/UX Designer • Creative Problem Solver • Design Enthusiast • Turning Ideas into Experiences • 
+            </textPath>
+          </text>
+        </svg>
       </div>
 
-      {/* Floating stickers */}
-      {stickers.map((sticker, index) => (
+      {/* Floating hero stickers - colorful around avatar */}
+      {heroStickers.map((sticker, index) => (
         <div
           key={index}
-          className={`absolute ${sticker.position} hidden lg:block`}
+          className={`absolute ${sticker.position} hidden lg:block z-20`}
           style={{
             animationDelay: sticker.delay,
           }}
         >
-          <div className="animate-float-slow hover:scale-110 transition-transform cursor-pointer">
-            <div className="bg-white/80 backdrop-blur-sm rounded-full p-4 shadow-lg border-2 border-foreground/10">
-              <sticker.Icon className="w-8 h-8 text-foreground/70" />
+          <div className="animate-float-slow hover:scale-110 hover:rotate-6 transition-all duration-300 cursor-pointer">
+            <div className="backdrop-blur-sm rounded-2xl p-4 shadow-xl border-2 border-black/20" style={{ backgroundColor: sticker.color + "CC" }}>
+              <sticker.Icon className="w-10 h-10 text-black" strokeWidth={2.5} />
             </div>
           </div>
         </div>
       ))}
 
       {/* Central content */}
-      <div className="text-center z-10 px-6">
-        <div className="mb-8 animate-fade-in-up">
-          <div className="w-32 h-32 mx-auto mb-6 rounded-full bg-gradient-to-br from-highlight-yellow via-highlight-pink to-highlight-blue p-1">
-            <div className="w-full h-full rounded-full bg-white flex items-center justify-center">
-              <span className="text-5xl">👩‍💻</span>
-            </div>
+      <div className="text-center z-10 px-6 relative">
+        {/* 3D Avatar */}
+        <div className="mb-10 animate-fade-in-up">
+          <div className="w-48 h-48 md:w-56 md:h-56 mx-auto animate-float">
+            <img 
+              src={avatarImage} 
+              alt="Priya Upadhyay 3D Avatar" 
+              className="w-full h-full object-contain drop-shadow-2xl"
+            />
           </div>
         </div>
 
-        <h1 className="text-5xl md:text-7xl font-bold mb-6 animate-fade-in-up" style={{ animationDelay: "0.2s" }}>
-          Hi, I'm <span className="highlight-yellow">Priya Upadhyay</span>
+        {/* Name with stylish highlight */}
+        <h1 className="text-4xl md:text-6xl font-medium mb-4 animate-fade-in-up" style={{ animationDelay: "0.2s" }}>
+          Hi, I'm{" "}
+          <span className="relative inline-block">
+            <span className="relative z-10 text-5xl md:text-8xl font-black" style={{ fontFamily: "'Syne', 'Clash Display', sans-serif" }}>
+              Priya Upadhyay
+            </span>
+            <span className="absolute inset-0 bg-highlight-yellow/80 -rotate-1 -z-10 scale-105" style={{ clipPath: "polygon(0 40%, 100% 50%, 100% 90%, 0 85%)" }}></span>
+          </span>
         </h1>
 
-        <p className="text-xl md:text-2xl text-muted-foreground mb-8 animate-fade-in-up" style={{ animationDelay: "0.4s" }}>
+        <p className="text-xl md:text-2xl text-muted-foreground mb-10 animate-fade-in-up font-medium" style={{ animationDelay: "0.4s" }}>
           UI/UX Designer crafting beautiful digital experiences
         </p>
 
         <div className="flex flex-wrap gap-4 justify-center animate-fade-in-up" style={{ animationDelay: "0.6s" }}>
           <button
             onClick={() => document.getElementById("projects")?.scrollIntoView({ behavior: "smooth" })}
-            className="px-8 py-3 bg-foreground text-background rounded-full font-semibold hover:scale-105 transition-transform"
+            className="px-8 py-3 bg-foreground text-background rounded-full font-semibold hover:scale-105 transition-transform shadow-lg"
           >
             View Projects
           </button>
           <button
             onClick={() => document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" })}
-            className="px-8 py-3 border-2 border-foreground text-foreground rounded-full font-semibold hover:bg-foreground hover:text-background transition-all"
+            className="px-8 py-3 border-2 border-foreground text-foreground rounded-full font-semibold hover:bg-foreground hover:text-background transition-all shadow-lg"
           >
             Get in Touch
           </button>
