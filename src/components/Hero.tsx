@@ -18,11 +18,11 @@ const Hero = () => {
         <svg className="absolute inset-0 w-full h-full" viewBox="0 0 1200 800" preserveAspectRatio="none">
           <path
             id="curvePath"
-            d="M -200,600 Q 300,200 600,400 T 1400,300"
+            d="M -200,570 Q 300,170 600,370 T 1400,270"
             fill="none"
             stroke="none"
           />
-          <text className="curved-text-animation" fill="#000000" fontSize="42" fontWeight="900" letterSpacing="4">
+          <text className="curved-text-animation" fill="#1a1a1a" fontSize="32" fontWeight="900" letterSpacing="4">
             <textPath href="#curvePath" startOffset="0%">
               <animate attributeName="startOffset" from="-50%" to="150%" dur="20s" repeatCount="indefinite" />
               UI/UX Designer • Creative Problem Solver • Design Enthusiast • Turning Ideas into Experiences • 
@@ -56,7 +56,8 @@ const Hero = () => {
             <img 
               src={avatarImage} 
               alt="Priya Upadhyay 3D Avatar" 
-              className="w-full h-full object-contain drop-shadow-2xl"
+              className="w-full h-full object-contain"
+              style={{ filter: 'drop-shadow(0px 8px 16px rgba(0, 0, 0, 0.15))' }}
             />
           </div>
         </div>
