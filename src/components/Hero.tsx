@@ -1,30 +1,7 @@
 import { Backpack, Coffee, Pen, Star, Laptop } from "lucide-react";
 import avatarImage from "@/assets/avatar-3d.png";
-import { useEffect, useState } from "react";
-import { removeBackground, loadImage } from "@/utils/removeBackground";
 
 const Hero = () => {
-  const [processedAvatar, setProcessedAvatar] = useState<string>(avatarImage);
-  const [isProcessing, setIsProcessing] = useState(true);
-
-  useEffect(() => {
-    const processImage = async () => {
-      try {
-        const response = await fetch(avatarImage);
-        const blob = await response.blob();
-        const img = await loadImage(blob);
-        const processedBlob = await removeBackground(img);
-        const url = URL.createObjectURL(processedBlob);
-        setProcessedAvatar(url);
-      } catch (error) {
-        console.error('Failed to process avatar:', error);
-      } finally {
-        setIsProcessing(false);
-      }
-    };
-    
-    processImage();
-  }, []);
   // Main stickers around avatar - only 5 colorful ones
   const heroStickers = [
     { Icon: Backpack, delay: "0s", position: "top-24 left-16", color: "#FFB6C1" },
@@ -76,20 +53,14 @@ const Hero = () => {
         {/* 3D Avatar */}
         <div className="mb-10 animate-fade-in-up">
           <div className="w-80 h-80 md:w-96 md:h-96 mx-auto animate-float">
-            {isProcessing ? (
-              <div className="w-full h-full flex items-center justify-center">
-                <div className="animate-pulse text-muted-foreground">Processing...</div>
-              </div>
-            ) : (
-              <img 
-                src={processedAvatar} 
-                alt="Priya Upadhyay 3D Avatar" 
-                className="w-full h-full object-contain"
-                style={{ 
-                  filter: 'drop-shadow(0px 8px 16px rgba(0, 0, 0, 0.15))'
-                }}
-              />
-            )}
+            <img 
+              src={avatarImage} 
+              alt="Priya Upadhyay 3D Avatar" 
+              className="w-full h-full object-contain"
+              style={{ 
+                filter: 'drop-shadow(0px 8px 16px rgba(0, 0, 0, 0.15))'
+              }}
+            />
           </div>
         </div>
 
