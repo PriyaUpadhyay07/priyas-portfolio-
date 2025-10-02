@@ -18,7 +18,7 @@ const Hero = () => {
         <svg className="absolute inset-0 w-full h-full" viewBox="0 0 1200 800" preserveAspectRatio="none">
           <path
             id="curvePath"
-            d="M -200,570 Q 300,170 600,370 T 1400,270"
+            d="M -200,540 Q 300,140 600,340 T 1400,240"
             fill="none"
             stroke="none"
           />
@@ -52,12 +52,15 @@ const Hero = () => {
       <div className="text-center z-10 px-6 relative">
         {/* 3D Avatar */}
         <div className="mb-10 animate-fade-in-up">
-          <div className="w-48 h-48 md:w-56 md:h-56 mx-auto animate-float">
+          <div className="w-64 h-64 md:w-72 md:h-72 mx-auto animate-float">
             <img 
               src={avatarImage} 
               alt="Priya Upadhyay 3D Avatar" 
               className="w-full h-full object-contain"
-              style={{ filter: 'drop-shadow(0px 8px 16px rgba(0, 0, 0, 0.15))' }}
+              style={{ 
+                filter: 'drop-shadow(0px 8px 16px rgba(0, 0, 0, 0.15))',
+                boxShadow: '0px 8px 16px rgba(0, 0, 0, 0.15)'
+              }}
             />
           </div>
         </div>
