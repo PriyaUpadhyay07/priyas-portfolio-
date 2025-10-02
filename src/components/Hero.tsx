@@ -52,7 +52,7 @@ const Hero = () => {
       <div className="text-center z-10 px-6 relative">
         {/* 3D Avatar */}
         <div className="mb-10 animate-fade-in-up">
-          <div className="w-96 h-96 md:w-[28rem] md:h-[28rem] mx-auto animate-float">
+          <div className="w-48 h-48 md:w-56 md:h-56 mx-auto animate-float">
             <img 
               src={avatarImage} 
               alt="Priya Upadhyay 3D Avatar" 
