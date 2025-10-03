@@ -66,6 +66,8 @@ const Contact = () => {
           <a
             href="/resume.pdf"
             download="Priya_Upadhyay_Resume.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
             className="inline-flex items-center gap-2 px-8 py-4 bg-foreground text-background rounded-full font-semibold hover:scale-105 transition-transform shadow-lg"
           >
             <Download className="w-5 h-5" />
