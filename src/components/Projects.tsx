@@ -1,6 +1,8 @@
 import { ExternalLink } from "lucide-react";
 import startupIdeasImage from "@/assets/startup-ideas-ai.png";
 import bakeryImage from "@/assets/bakery-website.png";
+import movieAppImage from "@/assets/movie-app.png";
+import wisetechImage from "@/assets/wisetech-advisor.png";
 
 const Projects = () => {
   const projects = [
@@ -23,12 +25,14 @@ const Projects = () => {
       description: "A streaming app prototype with clean UI and intuitive user flow.",
       link: "https://www.figma.com/proto/JGjsIQxI8Nqcx3iljFNWhD/Movie-App-Prototype--Community-?node-id=117-341",
       color: "bg-highlight-blue",
+      image: movieAppImage,
     },
     {
       title: "WiseTech Advisor Blog",
       description: "A live blog created using WordPress to showcase tech and gadget articles.",
       link: "https://wisetechadvisor.com/",
       color: "bg-highlight-green",
+      image: wisetechImage,
     },
   ];
 
