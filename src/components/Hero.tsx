@@ -4,11 +4,11 @@ import avatarImage from "@/assets/avatar-3d.png";
 const Hero = () => {
   // Main stickers around avatar - only 5 colorful ones
   const heroStickers = [
-    { Icon: Backpack, delay: "0s", position: "top-24 left-16", color: "#FFB6C1" },
-    { Icon: Coffee, delay: "0.5s", position: "top-20 right-24", color: "#D2691E" },
-    { Icon: Pen, delay: "1s", position: "bottom-28 left-20", color: "#FFD700" },
-    { Icon: Star, delay: "1.5s", position: "top-1/2 right-16", color: "#FFF176" },
-    { Icon: Laptop, delay: "2s", position: "bottom-24 right-28", color: "#87CEEB" },
+    { Icon: Backpack, delay: "0s", position: "top-32 left-32", color: "#FFB6C1" },
+    { Icon: Coffee, delay: "0.5s", position: "top-28 right-36", color: "#D2691E" },
+    { Icon: Pen, delay: "1s", position: "bottom-32 left-36", color: "#FFD700" },
+    { Icon: Star, delay: "1.5s", position: "top-1/2 right-28", color: "#FFF176" },
+    { Icon: Laptop, delay: "2s", position: "bottom-28 right-40", color: "#87CEEB" },
   ];
 
   return (
