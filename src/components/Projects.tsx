@@ -1,4 +1,5 @@
 import { ExternalLink } from "lucide-react";
+import startupIdeasImage from "@/assets/startup-ideas-ai.png";
 
 const Projects = () => {
   const projects = [
@@ -7,6 +8,7 @@ const Projects = () => {
       description: "Generate personalized startup ideas, validate them, and create AI-driven custom roadmaps.",
       link: "https://startupideasai.info",
       color: "bg-highlight-yellow",
+      image: startupIdeasImage,
     },
     {
       title: "Modern Bakery Website",
@@ -45,8 +47,12 @@ const Projects = () => {
               rel="noopener noreferrer"
               className="group bg-white rounded-3xl p-8 shadow-lg border border-foreground/10 hover:shadow-2xl hover:-translate-y-3 transition-all duration-300"
             >
-              <div className={`${project.color} w-full h-48 rounded-2xl mb-6 flex items-center justify-center group-hover:scale-105 transition-transform`}>
-                <span className="text-6xl">🎨</span>
+              <div className={`${project.color} w-full h-48 rounded-2xl mb-6 flex items-center justify-center group-hover:scale-105 transition-transform overflow-hidden`}>
+                {project.image ? (
+                  <img src={project.image} alt={project.title} className="w-full h-full object-cover" />
+                ) : (
+                  <span className="text-6xl">🎨</span>
+                )}
               </div>
 
               <h3 className="text-2xl font-bold mb-3 group-hover:text-foreground/80 transition-colors">
