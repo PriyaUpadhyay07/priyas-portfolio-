@@ -1,5 +1,6 @@
 import { ExternalLink } from "lucide-react";
 import startupIdeasImage from "@/assets/startup-ideas-ai.png";
+import bakeryImage from "@/assets/bakery-website.png";
 
 const Projects = () => {
   const projects = [
@@ -15,6 +16,7 @@ const Projects = () => {
       description: "Designed a modern, minimal bakery website using Framer with elegant animations.",
       link: "https://flowing-dance-749413.framer.app/",
       color: "bg-highlight-pink",
+      image: bakeryImage,
     },
     {
       title: "Movie App Prototype",
