@@ -32,39 +32,34 @@ const Header = () => {
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
         isScrolled 
-          ? "bg-white/95 border-b-4 border-black" 
-          : "bg-white/95 border-b-4 border-black"
+          ? "backdrop-blur-xl bg-white/80 shadow-sm border-b border-black/10" 
+          : "bg-transparent"
       }`}
     >
-      <nav className="container mx-auto px-6 py-4">
+      <nav className="container mx-auto px-6 py-5">
         <div className="flex items-center justify-between">
           <button
             onClick={() => scrollToSection("home")}
-            className="text-2xl font-black text-foreground hover:opacity-80 transition-opacity"
-            style={{ fontFamily: "'Space Grotesk', sans-serif" }}
+            className="text-xl font-bold text-foreground hover:opacity-80 transition-opacity"
+            style={{ fontFamily: "'Syne', 'Clash Display', sans-serif" }}
           >
-            crypko°
+            Priya Upadhyay
           </button>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center gap-6">
-            {["Home", "About", "Skills", "Projects"].map((item) => (
+          <div className="hidden md:flex items-center gap-2">
+            {["Home", "About", "Skills", "Projects", "Contact"].map((item) => (
               <button
                 key={item}
                 onClick={() => scrollToSection(item.toLowerCase())}
-                className="text-foreground font-semibold text-sm uppercase tracking-wide hover:opacity-70 transition-opacity"
+                className={`relative px-5 py-2 text-foreground font-medium transition-all duration-300 rounded-full group hover:${navColors[item]}`}
               >
-                {item}
+                <span className="relative z-10">{item}</span>
+                <span className={`absolute inset-0 ${navColors[item]} rounded-full scale-0 group-hover:scale-100 transition-transform duration-300 border-2 border-transparent group-hover:border-black`}></span>
               </button>
             ))}
-            <button
-              onClick={() => scrollToSection("contact")}
-              className="px-6 py-2 bg-white text-foreground border-3 border-black rounded-full font-bold text-sm uppercase hover:bg-foreground hover:text-white transition-all"
-            >
-              Contact
-            </button>
           </div>
 
           {/* Mobile Menu Button */}
@@ -78,13 +73,13 @@ const Header = () => {
 
         {/* Mobile Navigation */}
         {isMobileMenuOpen && (
-          <div className="md:hidden mt-4 bg-white border-3 border-black rounded-lg p-4">
+          <div className="md:hidden mt-4 glass rounded-lg p-4">
             <div className="flex flex-col gap-4">
               {["Home", "About", "Skills", "Projects", "Contact"].map((item) => (
                 <button
                   key={item}
                   onClick={() => scrollToSection(item.toLowerCase())}
-                  className="text-foreground hover:opacity-70 font-semibold transition-opacity text-left uppercase text-sm"
+                  className="text-foreground hover:text-primary font-medium transition-colors text-left"
                 >
                   {item}
                 </button>

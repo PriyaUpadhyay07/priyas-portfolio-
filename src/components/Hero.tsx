@@ -52,7 +52,7 @@ const Hero = () => {
       <div className="text-center z-10 px-6 relative">
         {/* 3D Avatar */}
         <div className="mb-10 animate-fade-in-up">
-          <div className="w-[32rem] h-[32rem] md:w-[42rem] md:h-[42rem] mx-auto animate-float">
+          <div className="w-[28rem] h-[28rem] md:w-[36rem] md:h-[36rem] mx-auto animate-float">
             <img 
               src={avatarImage} 
               alt="Priya Upadhyay 3D Avatar" 
@@ -68,7 +68,7 @@ const Hero = () => {
         <h1 className="text-4xl md:text-6xl font-medium mb-4 animate-fade-in-up" style={{ animationDelay: "0.2s" }}>
           Hi, I'm{" "}
           <span className="relative inline-block">
-            <span className="relative z-10 text-5xl md:text-8xl font-bold" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
+            <span className="relative z-10 text-5xl md:text-8xl font-black" style={{ fontFamily: "'Syne', 'Clash Display', sans-serif" }}>
               Priya Upadhyay
             </span>
             <span className="absolute inset-0 bg-highlight-yellow/80 -rotate-1 -z-10 scale-105" style={{ clipPath: "polygon(0 40%, 100% 50%, 100% 90%, 0 85%)" }}></span>

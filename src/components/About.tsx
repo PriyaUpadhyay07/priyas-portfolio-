@@ -44,11 +44,11 @@ const About = () => {
           </div>
 
           {/* Decorative elements */}
-          <div className="mt-8 flex gap-3 justify-center relative">
-            <div className="w-3 h-3 rounded-full bg-highlight-yellow animate-bounce"></div>
-            <div className="w-3 h-3 rounded-full bg-highlight-pink animate-bounce" style={{ animationDelay: "0.1s" }}></div>
-            <div className="w-3 h-3 rounded-full bg-highlight-blue animate-bounce" style={{ animationDelay: "0.2s" }}></div>
-            <div className="w-3 h-3 rounded-full bg-highlight-green animate-bounce" style={{ animationDelay: "0.3s" }}></div>
+          <div className="mt-8 flex gap-2 justify-center">
+            <div className="w-2 h-2 rounded-full bg-highlight-yellow animate-pulse"></div>
+            <div className="w-2 h-2 rounded-full bg-highlight-pink animate-pulse" style={{ animationDelay: "0.2s" }}></div>
+            <div className="w-2 h-2 rounded-full bg-highlight-blue animate-pulse" style={{ animationDelay: "0.4s" }}></div>
+            <div className="w-2 h-2 rounded-full bg-highlight-green animate-pulse" style={{ animationDelay: "0.6s" }}></div>
           </div>
         </div>
       </div>
