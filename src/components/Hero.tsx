@@ -2,13 +2,13 @@ import { Backpack, Coffee, Pen, Star, Laptop } from "lucide-react";
 import avatarImage from "@/assets/avatar-3d.png";
 
 const Hero = () => {
-  // Main stickers around avatar - placed closer to avatar
+  // Main stickers around avatar - placed upward from text
   const heroStickers = [
-    { Icon: Backpack, delay: "0s", position: "top-32 left-[35%]", color: "#FFB6C1" },
-    { Icon: Coffee, delay: "0.5s", position: "top-28 right-[35%]", color: "#D2691E" },
-    { Icon: Pen, delay: "1s", position: "bottom-32 left-[38%]", color: "#FFD700" },
-    { Icon: Star, delay: "1.5s", position: "top-1/2 right-[33%]", color: "#FFF176" },
-    { Icon: Laptop, delay: "2s", position: "bottom-28 right-[38%]", color: "#87CEEB" },
+    { Icon: Backpack, delay: "0s", position: "top-24 left-[35%]", color: "#FFB6C1" },
+    { Icon: Coffee, delay: "0.5s", position: "top-20 right-[35%]", color: "#D2691E" },
+    { Icon: Pen, delay: "1s", position: "top-1/2 left-[38%]", color: "#FFD700" },
+    { Icon: Star, delay: "1.5s", position: "top-1/3 right-[33%]", color: "#FFF176" },
+    { Icon: Laptop, delay: "2s", position: "top-1/2 right-[38%]", color: "#87CEEB" },
   ];
 
   return (
@@ -51,7 +51,7 @@ const Hero = () => {
       {/* Central content */}
       <div className="text-center z-10 px-6 relative">
         {/* 3D Avatar */}
-        <div className="mb-10 animate-fade-in-up">
+        <div className="mb-4 animate-fade-in-up">
           <div className="w-[28rem] h-[28rem] md:w-[36rem] md:h-[36rem] mx-auto animate-float">
             <img 
               src={avatarImage} 
@@ -68,7 +68,7 @@ const Hero = () => {
         <h1 className="text-4xl md:text-6xl font-medium mb-4 animate-fade-in-up" style={{ animationDelay: "0.2s" }}>
           Hi, I'm{" "}
           <span className="relative inline-block">
-            <span className="relative z-10 text-5xl md:text-8xl font-black" style={{ fontFamily: "'Syne', 'Clash Display', sans-serif" }}>
+            <span className="relative z-10 text-5xl md:text-8xl font-bold" style={{ fontFamily: "'Syne', 'Clash Display', sans-serif" }}>
               Priya Upadhyay
             </span>
             <span className="absolute inset-0 bg-highlight-yellow/80 -rotate-1 -z-10 scale-105" style={{ clipPath: "polygon(0 40%, 100% 50%, 100% 90%, 0 85%)" }}></span>
