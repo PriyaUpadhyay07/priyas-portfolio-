@@ -34,33 +34,45 @@ const Header = () => {
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
         isScrolled 
-          ? "backdrop-blur-xl bg-white/80 shadow-sm border-b border-black/10" 
+          ? "backdrop-blur-xl bg-white/80 shadow-sm" 
           : "bg-transparent"
       }`}
     >
       <nav className="container mx-auto px-6 py-5">
         <div className="flex items-center justify-between">
+          {/* Left: Name with fancy font */}
           <button
             onClick={() => scrollToSection("home")}
-            className="text-xl font-bold text-foreground hover:opacity-80 transition-opacity"
-            style={{ fontFamily: "'Syne', 'Clash Display', sans-serif" }}
+            className="text-3xl md:text-4xl text-foreground hover:opacity-80 transition-opacity"
+            style={{ fontFamily: "'Pacifico', cursive" }}
           >
             Priya Upadhyay
           </button>
 
-          {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center gap-2">
+          {/* Center: Desktop Navigation - Rounded pill shape */}
+          <div className="hidden md:flex items-center gap-1 bg-white/90 backdrop-blur-md rounded-full px-2 py-2 shadow-lg border-2 border-black/5">
             {["Home", "About", "Skills", "Projects", "Contact"].map((item) => (
               <button
                 key={item}
                 onClick={() => scrollToSection(item.toLowerCase())}
-                className={`relative px-5 py-2 text-foreground font-medium transition-all duration-300 rounded-full group hover:${navColors[item]}`}
+                className="relative px-5 py-2 text-foreground font-medium transition-all duration-300 rounded-full group"
               >
                 <span className="relative z-10">{item}</span>
                 <span className={`absolute inset-0 ${navColors[item]} rounded-full scale-0 group-hover:scale-100 transition-transform duration-300 border-2 border-transparent group-hover:border-black`}></span>
               </button>
             ))}
           </div>
+
+          {/* Right: Resume Button */}
+          <a
+            href="/resume.pdf"
+            download="Priya_Upadhyay_Resume.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hidden md:flex px-6 py-2.5 bg-foreground text-background rounded-full font-semibold hover:scale-105 transition-all shadow-lg"
+          >
+            Resume
+          </a>
 
           {/* Mobile Menu Button */}
           <button
@@ -84,6 +96,15 @@ const Header = () => {
                   {item}
                 </button>
               ))}
+              <a
+                href="/resume.pdf"
+                download="Priya_Upadhyay_Resume.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-foreground hover:text-primary font-medium transition-colors text-left"
+              >
+                Resume
+              </a>
             </div>
           </div>
         )}

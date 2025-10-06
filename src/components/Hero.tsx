@@ -2,13 +2,13 @@ import { Backpack, Coffee, Pen, Star, Laptop } from "lucide-react";
 import avatarImage from "@/assets/avatar-3d.png";
 
 const Hero = () => {
-  // Main stickers around avatar - only 5 colorful ones
+  // Main stickers around avatar - placed closer to avatar
   const heroStickers = [
-    { Icon: Backpack, delay: "0s", position: "top-40 left-48", color: "#FFB6C1" },
-    { Icon: Coffee, delay: "0.5s", position: "top-36 right-48", color: "#D2691E" },
-    { Icon: Pen, delay: "1s", position: "bottom-40 left-52", color: "#FFD700" },
-    { Icon: Star, delay: "1.5s", position: "top-1/2 right-44", color: "#FFF176" },
-    { Icon: Laptop, delay: "2s", position: "bottom-36 right-56", color: "#87CEEB" },
+    { Icon: Backpack, delay: "0s", position: "top-32 left-[35%]", color: "#FFB6C1" },
+    { Icon: Coffee, delay: "0.5s", position: "top-28 right-[35%]", color: "#D2691E" },
+    { Icon: Pen, delay: "1s", position: "bottom-32 left-[38%]", color: "#FFD700" },
+    { Icon: Star, delay: "1.5s", position: "top-1/2 right-[33%]", color: "#FFF176" },
+    { Icon: Laptop, delay: "2s", position: "bottom-28 right-[38%]", color: "#87CEEB" },
   ];
 
   return (
