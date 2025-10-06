@@ -2,13 +2,13 @@ import { Backpack, Coffee, Pen, Star, Laptop } from "lucide-react";
 import avatarImage from "@/assets/avatar-3d.png";
 
 const Hero = () => {
-  // Main stickers around avatar - placed upward from text
+  // Main stickers around avatar - placed away from avatar
   const heroStickers = [
-    { Icon: Backpack, delay: "0s", position: "top-24 left-[35%]", color: "#FFB6C1" },
-    { Icon: Coffee, delay: "0.5s", position: "top-20 right-[35%]", color: "#D2691E" },
-    { Icon: Pen, delay: "1s", position: "top-1/2 left-[38%]", color: "#FFD700" },
-    { Icon: Star, delay: "1.5s", position: "top-1/3 right-[33%]", color: "#FFF176" },
-    { Icon: Laptop, delay: "2s", position: "top-1/2 right-[38%]", color: "#87CEEB" },
+    { Icon: Backpack, delay: "0s", position: "top-16 left-[30%]", color: "#FFB6C1" },
+    { Icon: Coffee, delay: "0.5s", position: "top-12 right-[30%]", color: "#D2691E" },
+    { Icon: Pen, delay: "1s", position: "top-1/2 left-[32%]", color: "#FFD700" },
+    { Icon: Star, delay: "1.5s", position: "top-1/4 right-[28%]", color: "#FFF176" },
+    { Icon: Laptop, delay: "2s", position: "top-1/2 right-[32%]", color: "#87CEEB" },
   ];
 
   return (
@@ -51,7 +51,7 @@ const Hero = () => {
       {/* Central content */}
       <div className="text-center z-10 px-6 relative">
         {/* 3D Avatar */}
-        <div className="mb-4 animate-fade-in-up">
+        <div className="mb-1 animate-fade-in-up">
           <div className="w-[28rem] h-[28rem] md:w-[36rem] md:h-[36rem] mx-auto animate-float">
             <img 
               src={avatarImage} 
