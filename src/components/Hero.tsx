@@ -57,7 +57,7 @@ const Hero = () => {
       {/* Central content */}
       <div className="text-center z-10 px-6 relative">
         {/* 3D Avatar */}
-        <div className="mb-1 animate-fade-in-up">
+        <div className="-mb-8 md:-mb-12 animate-fade-in-up">
           <div className="w-[28rem] h-[28rem] md:w-[36rem] md:h-[36rem] mx-auto animate-float">
             <img 
               src={avatarImage} 
