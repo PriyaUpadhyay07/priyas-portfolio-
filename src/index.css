@@ -173,6 +173,16 @@ All colors MUST be HSL.
     animation: fade-in-up 0.6s ease-out forwards;
   }
 
+  /* Grid movement animation */
+  @keyframes moveGrid {
+    0% {
+      background-position: 0 0;
+    }
+    100% {
+      background-position: 60px 60px;
+    }
+  }
+
   /* Sketchy circle effect */
   .sketchy-circle {
     position: relative;

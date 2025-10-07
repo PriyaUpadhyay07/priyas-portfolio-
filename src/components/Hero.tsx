@@ -14,10 +14,11 @@ const Hero = () => {
   return (
     <section id="home" className="min-h-screen flex items-center justify-center relative overflow-hidden pt-20" style={{
       backgroundImage: `
-        linear-gradient(to right, hsl(var(--border) / 0.15) 1px, transparent 1px),
-        linear-gradient(to bottom, hsl(var(--border) / 0.15) 1px, transparent 1px)
+        linear-gradient(to right, hsl(var(--border) / 0.4) 1px, transparent 1px),
+        linear-gradient(to bottom, hsl(var(--border) / 0.4) 1px, transparent 1px)
       `,
-      backgroundSize: '30px 30px'
+      backgroundSize: '60px 60px',
+      animation: 'moveGrid 20s linear infinite'
     }}>
       {/* Animated curved text - behind everything */}
       <div className="absolute inset-0 pointer-events-none overflow-hidden z-0">
