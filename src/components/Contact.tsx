@@ -47,8 +47,9 @@ const Contact = () => {
             <a
               key={index}
               href={contact.link}
-              {...(contact.label !== "Email" && { target: "_blank", rel: "noopener noreferrer" })}
-              className="bg-white rounded-2xl p-6 shadow-lg border border-foreground/10 hover:shadow-xl hover:-translate-y-2 transition-all duration-300 group"
+              target={contact.label !== "Email" ? "_blank" : undefined}
+              rel={contact.label !== "Email" ? "noopener noreferrer" : undefined}
+              className="bg-white rounded-2xl p-6 shadow-lg border border-foreground/10 hover:shadow-xl hover:-translate-y-2 transition-all duration-300 group cursor-pointer"
             >
               <div className={`${contact.color} w-12 h-12 rounded-full flex items-center justify-center mb-4 group-hover:scale-110 transition-transform`}>
                 <contact.icon className="w-6 h-6 text-foreground" />
