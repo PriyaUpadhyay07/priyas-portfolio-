@@ -47,8 +47,7 @@ const Contact = () => {
             <a
               key={index}
               href={contact.link}
-              target="_blank"
-              rel="noopener noreferrer"
+              {...(contact.label !== "Email" && { target: "_blank", rel: "noopener noreferrer" })}
               className="bg-white rounded-2xl p-6 shadow-lg border border-foreground/10 hover:shadow-xl hover:-translate-y-2 transition-all duration-300 group"
             >
               <div className={`${contact.color} w-12 h-12 rounded-full flex items-center justify-center mb-4 group-hover:scale-110 transition-transform`}>
