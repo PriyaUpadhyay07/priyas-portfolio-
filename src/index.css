@@ -38,6 +38,8 @@ All colors MUST be HSL.
     --highlight-pink: 350 100% 87%;
     --highlight-blue: 199 100% 85%;
     --highlight-green: 120 39% 84%;
+    --highlight-purple: 270 67% 85%;
+    --highlight-orange: 30 100% 80%;
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 0 0% 100%;

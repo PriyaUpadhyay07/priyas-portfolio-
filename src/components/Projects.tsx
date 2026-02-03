@@ -34,6 +34,20 @@ const Projects = () => {
       color: "bg-highlight-green",
       image: wisetechImage,
     },
+    {
+      title: "AI Studio App 1",
+      description: "An AI-powered application built with Google AI Studio for intelligent automation.",
+      link: "https://ai.studio/apps/drive/1Aelyo68j3qQoS2cb0ZGYm7IfrE7myzgR?fullscreenApplet=true",
+      color: "bg-highlight-purple",
+      image: null,
+    },
+    {
+      title: "AI Studio App 2",
+      description: "A creative AI tool leveraging Google AI Studio for smart content generation.",
+      link: "https://ai.studio/apps/drive/1gUmkEltTONvz6Gnl-JQCQvKtHkMut6J2?fullscreenApplet=true",
+      color: "bg-highlight-orange",
+      image: null,
+    },
   ];
 
   return (

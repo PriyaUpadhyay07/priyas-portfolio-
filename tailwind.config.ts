@@ -65,6 +65,8 @@ export default {
           pink: "hsl(var(--highlight-pink))",
           blue: "hsl(var(--highlight-blue))",
           green: "hsl(var(--highlight-green))",
+          purple: "hsl(var(--highlight-purple))",
+          orange: "hsl(var(--highlight-orange))",
         },
       },
       borderRadius: {
