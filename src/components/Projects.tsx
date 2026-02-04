@@ -54,7 +54,7 @@ const Projects = () => {
     {
       title: "Fashion Brand Website Design",
       description: "An elegant fashion brand website featuring sophisticated layouts, premium aesthetics, and seamless user experience.",
-      link: null,
+      link: "/fashion-brand-website.png",
       color: "bg-highlight-orange",
       image: fashionBrandImage,
     },
