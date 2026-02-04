@@ -4,62 +4,51 @@ import bakeryImage from "@/assets/bakery-website.png";
 import movieAppImage from "@/assets/movie-app.png";
 import wisetechImage from "@/assets/wisetech-advisor.png";
 import rareBeautyImage from "@/assets/rare-beauty-website.png";
-
 const Projects = () => {
-  const projects = [
-    {
-      title: "Startup Ideas AI",
-      description: "Generate personalized startup ideas, validate them, and create AI-driven custom roadmaps.",
-      link: "https://startupideasai.info",
-      color: "bg-highlight-yellow",
-      image: startupIdeasImage,
-    },
-    {
-      title: "Modern Bakery Website",
-      description: "Designed a modern, minimal bakery website using Framer with elegant animations.",
-      link: "https://flowing-dance-749413.framer.app/",
-      color: "bg-highlight-pink",
-      image: bakeryImage,
-    },
-    {
-      title: "Movie App Prototype",
-      description: "A streaming app prototype with clean UI and intuitive user flow.",
-      link: "https://www.figma.com/proto/JGjsIQxI8Nqcx3iljFNWhD/Movie-App-Prototype--Community-?node-id=117-341",
-      color: "bg-highlight-blue",
-      image: movieAppImage,
-    },
-    {
-      title: "WiseTech Advisor Blog",
-      description: "A live blog created using WordPress to showcase tech and gadget articles.",
-      link: "https://wisetechadvisor.com/",
-      color: "bg-highlight-green",
-      image: wisetechImage,
-    },
-    {
-      title: "Rare Beauty E-Commerce",
-      description: "A modern beauty e-commerce website with elegant product showcases and smooth animations.",
-      link: "https://teal-treacle-66ee62.netlify.app/",
-      color: "bg-highlight-purple",
-      image: rareBeautyImage,
-    },
-    {
-      title: "AI Studio App 1",
-      description: "An AI-powered application built with Google AI Studio for intelligent automation.",
-      link: "https://ai.studio/apps/drive/1Aelyo68j3qQoS2cb0ZGYm7IfrE7myzgR?fullscreenApplet=true",
-      color: "bg-highlight-pink",
-      image: null,
-    },
-    {
-      title: "AI Studio App 2",
-      description: "A creative AI tool leveraging Google AI Studio for smart content generation.",
-      link: "https://ai.studio/apps/drive/1gUmkEltTONvz6Gnl-JQCQvKtHkMut6J2?fullscreenApplet=true",
-      color: "bg-highlight-orange",
-      image: null,
-    },
-  ];
-
-  return (
-    <section id="projects" className="py-20 px-6">
+  const projects = [{
+    title: "Startup Ideas AI",
+    description: "Generate personalized startup ideas, validate them, and create AI-driven custom roadmaps.",
+    link: "https://startupideasai.info",
+    color: "bg-highlight-yellow",
+    image: startupIdeasImage
+  }, {
+    title: "Modern Bakery Website",
+    description: "Designed a modern, minimal bakery website using Framer with elegant animations.",
+    link: "https://flowing-dance-749413.framer.app/",
+    color: "bg-highlight-pink",
+    image: bakeryImage
+  }, {
+    title: "Movie App Prototype",
+    description: "A streaming app prototype with clean UI and intuitive user flow.",
+    link: "https://www.figma.com/proto/JGjsIQxI8Nqcx3iljFNWhD/Movie-App-Prototype--Community-?node-id=117-341",
+    color: "bg-highlight-blue",
+    image: movieAppImage
+  }, {
+    title: "WiseTech Advisor Blog",
+    description: "A live blog created using WordPress to showcase tech and gadget articles.",
+    link: "https://wisetechadvisor.com/",
+    color: "bg-highlight-green",
+    image: wisetechImage
+  }, {
+    title: "Rare Beauty E-Commerce",
+    description: "A modern beauty e-commerce website with elegant product showcases and smooth animations.",
+    link: "https://teal-treacle-66ee62.netlify.app/",
+    color: "bg-highlight-purple",
+    image: rareBeautyImage
+  }, {
+    title: "AI Studio App 1",
+    description: "An AI-powered application built with Google AI Studio for intelligent automation.",
+    link: "https://ai.studio/apps/drive/1Aelyo68j3qQoS2cb0ZGYm7IfrE7myzgR?fullscreenApplet=true",
+    color: "bg-highlight-pink",
+    image: null
+  }, {
+    title: "AI Studio App 2",
+    description: "A creative AI tool leveraging Google AI Studio for smart content generation.",
+    link: "https://ai.studio/apps/drive/1gUmkEltTONvz6Gnl-JQCQvKtHkMut6J2?fullscreenApplet=true",
+    color: "bg-highlight-orange",
+    image: null
+  }];
+  return <section id="projects" className="py-20 px-6">
       <div className="container mx-auto max-w-6xl">
         <h2 className="text-4xl md:text-5xl font-bold mb-4 text-center">
           Featured <span className="highlight-yellow">Projects</span>
@@ -67,20 +56,13 @@ const Projects = () => {
         <p className="text-center text-muted-foreground mb-12">A selection of my recent work</p>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          {projects.map((project, index) => (
-            <a
-              key={index}
-              href={project.link}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="group bg-white rounded-3xl p-8 shadow-lg border border-foreground/10 hover:shadow-2xl hover:-translate-y-3 transition-all duration-300"
-            >
-              <div className={`${project.color} w-full h-48 rounded-2xl mb-6 flex items-center justify-center group-hover:scale-105 transition-transform overflow-hidden`}>
-                {project.image ? (
-                  <img src={project.image} alt={project.title} className="w-full h-full object-cover" />
-                ) : (
-                  <span className="text-6xl">🎨</span>
-                )}
+          {projects.map((project, index) => <a key={index} href={project.link} target="_blank" rel="noopener noreferrer" className="group bg-white rounded-3xl p-8 shadow-lg border border-foreground/10 hover:shadow-2xl hover:-translate-y-3 transition-all duration-300">🎨
+AI Studio App 2
+
+A creative AI tool leveraging Google AI Studio for smart content generation.
+
+View Project<div className={`${project.color} w-full h-48 rounded-2xl mb-6 flex items-center justify-center group-hover:scale-105 transition-transform overflow-hidden`}>
+                {project.image ? <img src={project.image} alt={project.title} className="w-full h-full object-cover" /> : <span className="text-6xl">🎨</span>}
               </div>
 
               <h3 className="text-2xl font-bold mb-3 group-hover:text-foreground/80 transition-colors">
@@ -95,12 +77,9 @@ const Projects = () => {
                 View Project
                 <ExternalLink className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
               </div>
-            </a>
-          ))}
+            </a>)}
         </div>
       </div>
-    </section>
-  );
+    </section>;
 };
-
 export default Projects;
