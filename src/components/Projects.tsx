@@ -1,9 +1,10 @@
-import { ExternalLink } from "lucide-react";
+import { ExternalLink, Play } from "lucide-react";
 import startupIdeasImage from "@/assets/startup-ideas-ai.png";
 import bakeryImage from "@/assets/bakery-website.png";
 import movieAppImage from "@/assets/movie-app.png";
 import wisetechImage from "@/assets/wisetech-advisor.png";
 import rareBeautyImage from "@/assets/rare-beauty-website.png";
+import fashionBrandImage from "@/assets/fashion-brand-website.png";
 
 const Projects = () => {
   const projects = [
@@ -43,18 +44,19 @@ const Projects = () => {
       image: rareBeautyImage,
     },
     {
-      title: "AI Studio App 1",
-      description: "An AI-powered application built with Google AI Studio for intelligent automation.",
-      link: "https://ai.studio/apps/drive/1Aelyo68j3qQoS2cb0ZGYm7IfrE7myzgR?fullscreenApplet=true",
+      title: "Fashion Brand Ecommerce Animated Web Design",
+      description: "A stunning animated e-commerce website design showcasing modern fashion with smooth transitions and engaging visuals.",
+      link: "/fashion-brand-video.mp4",
       color: "bg-highlight-pink",
       image: null,
+      isVideo: true,
     },
     {
-      title: "AI Studio App 2",
-      description: "A creative AI tool leveraging Google AI Studio for smart content generation.",
-      link: "https://ai.studio/apps/drive/1gUmkEltTONvz6Gnl-JQCQvKtHkMut6J2?fullscreenApplet=true",
+      title: "Fashion Brand Website Design",
+      description: "An elegant fashion brand website featuring sophisticated layouts, premium aesthetics, and seamless user experience.",
+      link: null,
       color: "bg-highlight-orange",
-      image: null,
+      image: fashionBrandImage,
     },
   ];
 
@@ -67,36 +69,48 @@ const Projects = () => {
         <p className="text-center text-muted-foreground mb-12">A selection of my recent work</p>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          {projects.map((project, index) => (
-            <a
-              key={index}
-              href={project.link}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="group bg-white rounded-3xl p-8 shadow-lg border border-foreground/10 hover:shadow-2xl hover:-translate-y-3 transition-all duration-300"
-            >
-              <div className={`${project.color} w-full h-48 rounded-2xl mb-6 flex items-center justify-center group-hover:scale-105 transition-transform overflow-hidden`}>
-                {project.image ? (
-                  <img src={project.image} alt={project.title} className="w-full h-full object-cover" />
-                ) : (
-                  <span className="text-6xl">🎨</span>
+        {projects.map((project, index) => {
+            const hasLink = project.link !== null;
+            const CardWrapper = hasLink ? 'a' : 'div';
+            const linkProps = hasLink ? {
+              href: project.link,
+              target: "_blank",
+              rel: "noopener noreferrer"
+            } : {};
+
+            return (
+              <CardWrapper
+                key={index}
+                {...linkProps}
+                className={`group bg-white rounded-3xl p-8 shadow-lg border border-foreground/10 hover:shadow-2xl hover:-translate-y-3 transition-all duration-300 ${hasLink ? 'cursor-pointer' : ''}`}
+              >
+                <div className={`${project.color} w-full h-48 rounded-2xl mb-6 flex items-center justify-center group-hover:scale-105 transition-transform overflow-hidden`}>
+                  {project.image ? (
+                    <img src={project.image} alt={project.title} className="w-full h-full object-cover" />
+                  ) : project.isVideo ? (
+                    <Play className="w-16 h-16 text-foreground/70" />
+                  ) : (
+                    <span className="text-6xl">🎨</span>
+                  )}
+                </div>
+
+                <h3 className="text-2xl font-bold mb-3 group-hover:text-foreground/80 transition-colors">
+                  {project.title}
+                </h3>
+
+                <p className="text-muted-foreground mb-4 leading-relaxed">
+                  {project.description}
+                </p>
+
+                {hasLink && (
+                  <div className="flex items-center gap-2 text-foreground font-medium group-hover:gap-3 transition-all">
+                    {project.isVideo ? "Watch Video" : "View Project"}
+                    <ExternalLink className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                  </div>
                 )}
-              </div>
-
-              <h3 className="text-2xl font-bold mb-3 group-hover:text-foreground/80 transition-colors">
-                {project.title}
-              </h3>
-
-              <p className="text-muted-foreground mb-4 leading-relaxed">
-                {project.description}
-              </p>
-
-              <div className="flex items-center gap-2 text-foreground font-medium group-hover:gap-3 transition-all">
-                View Project
-                <ExternalLink className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-              </div>
-            </a>
-          ))}
+              </CardWrapper>
+            );
+          })}
         </div>
       </div>
     </section>
