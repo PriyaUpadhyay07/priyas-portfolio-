@@ -3,6 +3,7 @@ import startupIdeasImage from "@/assets/startup-ideas-ai.png";
 import bakeryImage from "@/assets/bakery-website.png";
 import movieAppImage from "@/assets/movie-app.png";
 import wisetechImage from "@/assets/wisetech-advisor.png";
+import rareBeautyImage from "@/assets/rare-beauty-website.png";
 
 const Projects = () => {
   const projects = [
@@ -35,10 +36,17 @@ const Projects = () => {
       image: wisetechImage,
     },
     {
+      title: "Rare Beauty E-Commerce",
+      description: "A modern beauty e-commerce website with elegant product showcases and smooth animations.",
+      link: "https://teal-treacle-66ee62.netlify.app/",
+      color: "bg-highlight-purple",
+      image: rareBeautyImage,
+    },
+    {
       title: "AI Studio App 1",
       description: "An AI-powered application built with Google AI Studio for intelligent automation.",
       link: "https://ai.studio/apps/drive/1Aelyo68j3qQoS2cb0ZGYm7IfrE7myzgR?fullscreenApplet=true",
-      color: "bg-highlight-purple",
+      color: "bg-highlight-pink",
       image: null,
     },
     {
