@@ -1,12 +1,18 @@
-import { ExternalLink, Play } from "lucide-react";
+import { useState } from "react";
+import { ExternalLink, Play, X } from "lucide-react";
+import { Dialog, DialogContent, DialogClose } from "@/components/ui/dialog";
 import startupIdeasImage from "@/assets/startup-ideas-ai.png";
 import bakeryImage from "@/assets/bakery-website.png";
 import movieAppImage from "@/assets/movie-app.png";
 import wisetechImage from "@/assets/wisetech-advisor.png";
 import rareBeautyImage from "@/assets/rare-beauty-website.png";
 import fashionBrandImage from "@/assets/fashion-brand-website.png";
+import fashionDesign1 from "@/assets/fashion-design-1.png";
+import fashionDesign2 from "@/assets/fashion-design-2.png";
 
 const Projects = () => {
+  const [selectedGallery, setSelectedGallery] = useState<string[] | null>(null);
+
   const projects = [
     {
       title: "Startup Ideas AI",
@@ -54,11 +60,19 @@ const Projects = () => {
     {
       title: "Fashion Brand Website Design",
       description: "An elegant fashion brand website featuring sophisticated layouts, premium aesthetics, and seamless user experience.",
-      link: "/fashion-brand-website.png",
+      link: null,
       color: "bg-highlight-orange",
       image: fashionBrandImage,
+      isGallery: true,
+      galleryImages: [fashionDesign1, fashionDesign2],
     },
   ];
+
+  const handleCardClick = (project: typeof projects[0]) => {
+    if (project.isGallery && project.galleryImages) {
+      setSelectedGallery(project.galleryImages);
+    }
+  };
 
   return (
     <section id="projects" className="py-20 px-6">
@@ -69,50 +83,118 @@ const Projects = () => {
         <p className="text-center text-muted-foreground mb-12">A selection of my recent work</p>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-        {projects.map((project, index) => {
+          {projects.map((project, index) => {
             const hasLink = project.link !== null;
-            const CardWrapper = hasLink ? 'a' : 'div';
-            const linkProps = hasLink ? {
-              href: project.link,
-              target: "_blank",
-              rel: "noopener noreferrer"
-            } : {};
+            const isGallery = project.isGallery;
 
-            return (
-              <CardWrapper
-                key={index}
-                {...linkProps}
-                className={`group bg-white rounded-3xl p-8 shadow-lg border border-foreground/10 hover:shadow-2xl hover:-translate-y-3 transition-all duration-300 ${hasLink ? 'cursor-pointer' : ''}`}
-              >
-                <div className={`${project.color} w-full h-48 rounded-2xl mb-6 flex items-center justify-center group-hover:scale-105 transition-transform overflow-hidden`}>
-                  {project.image ? (
-                    <img src={project.image} alt={project.title} className="w-full h-full object-cover" />
-                  ) : project.isVideo ? (
-                    <Play className="w-16 h-16 text-foreground/70" />
-                  ) : (
-                    <span className="text-6xl">🎨</span>
-                  )}
-                </div>
-
-                <h3 className="text-2xl font-bold mb-3 group-hover:text-foreground/80 transition-colors">
-                  {project.title}
-                </h3>
-
-                <p className="text-muted-foreground mb-4 leading-relaxed">
-                  {project.description}
-                </p>
-
-                {hasLink && (
+            if (hasLink) {
+              return (
+                <a
+                  key={index}
+                  href={project.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group bg-white rounded-3xl p-8 shadow-lg border border-foreground/10 hover:shadow-2xl hover:-translate-y-3 transition-all duration-300 cursor-pointer"
+                >
+                  <div className={`${project.color} w-full h-48 rounded-2xl mb-6 flex items-center justify-center group-hover:scale-105 transition-transform overflow-hidden`}>
+                    {project.image ? (
+                      <img src={project.image} alt={project.title} className="w-full h-full object-cover" />
+                    ) : project.isVideo ? (
+                      <Play className="w-16 h-16 text-foreground/70" />
+                    ) : (
+                      <span className="text-6xl">🎨</span>
+                    )}
+                  </div>
+                  <h3 className="text-2xl font-bold mb-3 group-hover:text-foreground/80 transition-colors">
+                    {project.title}
+                  </h3>
+                  <p className="text-muted-foreground mb-4 leading-relaxed">
+                    {project.description}
+                  </p>
                   <div className="flex items-center gap-2 text-foreground font-medium group-hover:gap-3 transition-all">
                     {project.isVideo ? "Watch Video" : "View Project"}
                     <ExternalLink className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                   </div>
-                )}
-              </CardWrapper>
+                </a>
+              );
+            }
+
+            if (isGallery) {
+              return (
+                <div
+                  key={index}
+                  onClick={() => handleCardClick(project)}
+                  className="group bg-white rounded-3xl p-8 shadow-lg border border-foreground/10 hover:shadow-2xl hover:-translate-y-3 transition-all duration-300 cursor-pointer"
+                >
+                  <div className={`${project.color} w-full h-48 rounded-2xl mb-6 flex items-center justify-center group-hover:scale-105 transition-transform overflow-hidden`}>
+                    {project.image && (
+                      <img src={project.image} alt={project.title} className="w-full h-full object-cover" />
+                    )}
+                  </div>
+                  <h3 className="text-2xl font-bold mb-3 group-hover:text-foreground/80 transition-colors">
+                    {project.title}
+                  </h3>
+                  <p className="text-muted-foreground mb-4 leading-relaxed">
+                    {project.description}
+                  </p>
+                  <div className="flex items-center gap-2 text-foreground font-medium group-hover:gap-3 transition-all">
+                    View Designs
+                    <ExternalLink className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                  </div>
+                </div>
+              );
+            }
+
+            return (
+              <div
+                key={index}
+                className="group bg-white rounded-3xl p-8 shadow-lg border border-foreground/10 hover:shadow-2xl hover:-translate-y-3 transition-all duration-300"
+              >
+                <div className={`${project.color} w-full h-48 rounded-2xl mb-6 flex items-center justify-center group-hover:scale-105 transition-transform overflow-hidden`}>
+                  {project.image ? (
+                    <img src={project.image} alt={project.title} className="w-full h-full object-cover" />
+                  ) : (
+                    <span className="text-6xl">🎨</span>
+                  )}
+                </div>
+                <h3 className="text-2xl font-bold mb-3 group-hover:text-foreground/80 transition-colors">
+                  {project.title}
+                </h3>
+                <p className="text-muted-foreground mb-4 leading-relaxed">
+                  {project.description}
+                </p>
+              </div>
             );
           })}
         </div>
       </div>
+
+      {/* Dribbble-style Gallery Modal */}
+      <Dialog open={selectedGallery !== null} onOpenChange={() => setSelectedGallery(null)}>
+        <DialogContent className="max-w-6xl w-[95vw] max-h-[90vh] p-0 bg-background border-none overflow-hidden">
+          <div className="relative">
+            {/* Close button */}
+            <DialogClose className="absolute top-4 right-4 z-50 bg-foreground/90 hover:bg-foreground text-background rounded-full p-2 transition-colors shadow-lg">
+              <X className="w-5 h-5" />
+            </DialogClose>
+            
+            {/* Gallery content */}
+            <div className="overflow-y-auto max-h-[90vh] p-6 md:p-8">
+              <div className="flex flex-col gap-6">
+                {selectedGallery?.map((image, index) => (
+                  <div key={index} className="w-full rounded-xl overflow-hidden shadow-lg">
+                    <img 
+                      src={image} 
+                      alt={`Fashion Design ${index + 1}`} 
+                      className="w-full h-auto object-contain"
+                    />
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </DialogContent>
+      </Dialog>
     </section>
   );
 };
