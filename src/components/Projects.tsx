@@ -9,9 +9,16 @@ import rareBeautyImage from "@/assets/rare-beauty-website.png";
 import fashionBrandImage from "@/assets/fashion-brand-website.png";
 import fashionDesign1 from "@/assets/fashion-design-1.png";
 import fashionDesign2 from "@/assets/fashion-design-2.png";
+import fashionEcommerce1 from "@/assets/fashion-ecommerce-1.png";
+import fashionEcommerce2 from "@/assets/fashion-ecommerce-2.png";
+
+interface GalleryItem {
+  type: "image" | "video";
+  src: string;
+}
 
 const Projects = () => {
-  const [selectedGallery, setSelectedGallery] = useState<string[] | null>(null);
+  const [selectedGallery, setSelectedGallery] = useState<GalleryItem[] | null>(null);
 
   const projects = [
     {
@@ -52,10 +59,15 @@ const Projects = () => {
     {
       title: "Fashion Brand Ecommerce Animated Web Design",
       description: "A stunning animated e-commerce website design showcasing modern fashion with smooth transitions and engaging visuals.",
-      link: "/fashion-brand-video.mp4",
+      link: null,
       color: "bg-highlight-pink",
-      image: null,
-      isVideo: true,
+      image: fashionEcommerce1,
+      isGallery: true,
+      galleryItems: [
+        { type: "video", src: "/fashion-brand-video.mp4" },
+        { type: "image", src: fashionEcommerce1 },
+        { type: "image", src: fashionEcommerce2 },
+      ],
     },
     {
       title: "Fashion Brand Website Design",
@@ -64,13 +76,16 @@ const Projects = () => {
       color: "bg-highlight-orange",
       image: fashionBrandImage,
       isGallery: true,
-      galleryImages: [fashionDesign1, fashionDesign2],
+      galleryItems: [
+        { type: "image", src: fashionDesign1 },
+        { type: "image", src: fashionDesign2 },
+      ],
     },
   ];
 
   const handleCardClick = (project: typeof projects[0]) => {
-    if (project.isGallery && project.galleryImages) {
-      setSelectedGallery(project.galleryImages);
+    if (project.isGallery && project.galleryItems) {
+      setSelectedGallery(project.galleryItems as GalleryItem[]);
     }
   };
 
@@ -99,8 +114,6 @@ const Projects = () => {
                   <div className={`${project.color} w-full h-48 rounded-2xl mb-6 flex items-center justify-center group-hover:scale-105 transition-transform overflow-hidden`}>
                     {project.image ? (
                       <img src={project.image} alt={project.title} className="w-full h-full object-cover" />
-                    ) : project.isVideo ? (
-                      <Play className="w-16 h-16 text-foreground/70" />
                     ) : (
                       <span className="text-6xl">🎨</span>
                     )}
@@ -112,7 +125,7 @@ const Projects = () => {
                     {project.description}
                   </p>
                   <div className="flex items-center gap-2 text-foreground font-medium group-hover:gap-3 transition-all">
-                    {project.isVideo ? "Watch Video" : "View Project"}
+                    View Project
                     <ExternalLink className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                   </div>
                 </a>
@@ -181,13 +194,22 @@ const Projects = () => {
             {/* Gallery content */}
             <div className="overflow-y-auto max-h-[90vh] p-6 md:p-8">
               <div className="flex flex-col gap-6">
-                {selectedGallery?.map((image, index) => (
+                {selectedGallery?.map((item, index) => (
                   <div key={index} className="w-full rounded-xl overflow-hidden shadow-lg">
-                    <img 
-                      src={image} 
-                      alt={`Fashion Design ${index + 1}`} 
-                      className="w-full h-auto object-contain"
-                    />
+                    {item.type === "video" ? (
+                      <video 
+                        src={item.src} 
+                        controls 
+                        autoPlay
+                        className="w-full h-auto"
+                      />
+                    ) : (
+                      <img 
+                        src={item.src} 
+                        alt={`Design ${index + 1}`} 
+                        className="w-full h-auto object-contain"
+                      />
+                    )}
                   </div>
                 ))}
               </div>
