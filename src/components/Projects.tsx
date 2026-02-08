@@ -90,14 +90,14 @@ const Projects = () => {
   };
 
   return (
-    <section id="projects" className="py-20 px-6">
+    <section id="projects" className="py-12 sm:py-20 px-4 sm:px-6">
       <div className="container mx-auto max-w-6xl">
-        <h2 className="text-4xl md:text-5xl font-bold mb-4 text-center">
+        <h2 className="text-2xl sm:text-4xl md:text-5xl font-bold mb-3 sm:mb-4 text-center">
           Featured <span className="highlight-yellow">Projects</span>
         </h2>
-        <p className="text-center text-muted-foreground mb-12">A selection of my recent work</p>
+        <p className="text-center text-muted-foreground mb-8 sm:mb-12 text-sm sm:text-base">A selection of my recent work</p>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-8">
           {projects.map((project, index) => {
             const hasLink = project.link !== null;
             const isGallery = project.isGallery;
@@ -109,24 +109,24 @@ const Projects = () => {
                   href={project.link}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="group bg-white rounded-3xl p-8 shadow-lg border border-foreground/10 hover:shadow-2xl hover:-translate-y-3 transition-all duration-300 cursor-pointer"
+                  className="group bg-white rounded-2xl sm:rounded-3xl p-4 sm:p-8 shadow-lg border border-foreground/10 hover:shadow-2xl hover:-translate-y-3 transition-all duration-300 cursor-pointer"
                 >
-                  <div className={`${project.color} w-full h-48 rounded-2xl mb-6 flex items-center justify-center group-hover:scale-105 transition-transform overflow-hidden`}>
+                  <div className={`${project.color} w-full h-32 sm:h-48 rounded-xl sm:rounded-2xl mb-4 sm:mb-6 flex items-center justify-center group-hover:scale-105 transition-transform overflow-hidden`}>
                     {project.image ? (
                       <img src={project.image} alt={project.title} className="w-full h-full object-cover" />
                     ) : (
-                      <span className="text-6xl">🎨</span>
+                      <span className="text-4xl sm:text-6xl">🎨</span>
                     )}
                   </div>
-                  <h3 className="text-2xl font-bold mb-3 group-hover:text-foreground/80 transition-colors">
+                  <h3 className="text-lg sm:text-2xl font-bold mb-2 sm:mb-3 group-hover:text-foreground/80 transition-colors">
                     {project.title}
                   </h3>
-                  <p className="text-muted-foreground mb-4 leading-relaxed">
+                  <p className="text-muted-foreground mb-3 sm:mb-4 leading-relaxed text-xs sm:text-base">
                     {project.description}
                   </p>
-                  <div className="flex items-center gap-2 text-foreground font-medium group-hover:gap-3 transition-all">
+                  <div className="flex items-center gap-2 text-foreground font-medium group-hover:gap-3 transition-all text-sm sm:text-base">
                     View Project
-                    <ExternalLink className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                    <ExternalLink className="w-3 h-3 sm:w-4 sm:h-4 group-hover:translate-x-1 transition-transform" />
                   </div>
                 </a>
               );
@@ -137,22 +137,22 @@ const Projects = () => {
                 <div
                   key={index}
                   onClick={() => handleCardClick(project)}
-                  className="group bg-white rounded-3xl p-8 shadow-lg border border-foreground/10 hover:shadow-2xl hover:-translate-y-3 transition-all duration-300 cursor-pointer"
+                  className="group bg-white rounded-2xl sm:rounded-3xl p-4 sm:p-8 shadow-lg border border-foreground/10 hover:shadow-2xl hover:-translate-y-3 transition-all duration-300 cursor-pointer"
                 >
-                  <div className={`${project.color} w-full h-48 rounded-2xl mb-6 flex items-center justify-center group-hover:scale-105 transition-transform overflow-hidden`}>
+                  <div className={`${project.color} w-full h-32 sm:h-48 rounded-xl sm:rounded-2xl mb-4 sm:mb-6 flex items-center justify-center group-hover:scale-105 transition-transform overflow-hidden`}>
                     {project.image && (
                       <img src={project.image} alt={project.title} className="w-full h-full object-cover" />
                     )}
                   </div>
-                  <h3 className="text-2xl font-bold mb-3 group-hover:text-foreground/80 transition-colors">
+                  <h3 className="text-lg sm:text-2xl font-bold mb-2 sm:mb-3 group-hover:text-foreground/80 transition-colors">
                     {project.title}
                   </h3>
-                  <p className="text-muted-foreground mb-4 leading-relaxed">
+                  <p className="text-muted-foreground mb-3 sm:mb-4 leading-relaxed text-xs sm:text-base">
                     {project.description}
                   </p>
-                  <div className="flex items-center gap-2 text-foreground font-medium group-hover:gap-3 transition-all">
+                  <div className="flex items-center gap-2 text-foreground font-medium group-hover:gap-3 transition-all text-sm sm:text-base">
                     View Designs
-                    <ExternalLink className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                    <ExternalLink className="w-3 h-3 sm:w-4 sm:h-4 group-hover:translate-x-1 transition-transform" />
                   </div>
                 </div>
               );
@@ -161,19 +161,19 @@ const Projects = () => {
             return (
               <div
                 key={index}
-                className="group bg-white rounded-3xl p-8 shadow-lg border border-foreground/10 hover:shadow-2xl hover:-translate-y-3 transition-all duration-300"
+                className="group bg-white rounded-2xl sm:rounded-3xl p-4 sm:p-8 shadow-lg border border-foreground/10 hover:shadow-2xl hover:-translate-y-3 transition-all duration-300"
               >
-                <div className={`${project.color} w-full h-48 rounded-2xl mb-6 flex items-center justify-center group-hover:scale-105 transition-transform overflow-hidden`}>
+                <div className={`${project.color} w-full h-32 sm:h-48 rounded-xl sm:rounded-2xl mb-4 sm:mb-6 flex items-center justify-center group-hover:scale-105 transition-transform overflow-hidden`}>
                   {project.image ? (
                     <img src={project.image} alt={project.title} className="w-full h-full object-cover" />
                   ) : (
-                    <span className="text-6xl">🎨</span>
+                    <span className="text-4xl sm:text-6xl">🎨</span>
                   )}
                 </div>
-                <h3 className="text-2xl font-bold mb-3 group-hover:text-foreground/80 transition-colors">
+                <h3 className="text-lg sm:text-2xl font-bold mb-2 sm:mb-3 group-hover:text-foreground/80 transition-colors">
                   {project.title}
                 </h3>
-                <p className="text-muted-foreground mb-4 leading-relaxed">
+                <p className="text-muted-foreground mb-3 sm:mb-4 leading-relaxed text-xs sm:text-base">
                   {project.description}
                 </p>
               </div>
