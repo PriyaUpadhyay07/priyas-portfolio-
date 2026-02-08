@@ -41,28 +41,28 @@ const Skills = () => {
   ];
 
   return (
-    <section id="skills" className="py-20 px-6 bg-secondary/30">
+    <section id="skills" className="py-12 sm:py-20 px-4 sm:px-6 bg-secondary/30">
       <div className="container mx-auto max-w-6xl">
-        <h2 className="text-4xl md:text-5xl font-bold mb-4 text-center">
+        <h2 className="text-2xl sm:text-4xl md:text-5xl font-bold mb-3 sm:mb-4 text-center">
           Skills & <span className="highlight-blue sketchy-circle inline-block">Tools</span>
         </h2>
-        <p className="text-center text-muted-foreground mb-12">Technologies and tools I work with</p>
+        <p className="text-center text-muted-foreground mb-8 sm:mb-12 text-sm sm:text-base">Technologies and tools I work with</p>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-6">
           {skillCategories.map((category, index) => (
             <div
               key={index}
-              className="bg-white rounded-2xl p-6 shadow-lg border border-foreground/10 hover:shadow-xl hover:-translate-y-2 transition-all duration-300 group"
+              className="bg-white rounded-xl sm:rounded-2xl p-4 sm:p-6 shadow-lg border border-foreground/10 hover:shadow-xl hover:-translate-y-2 transition-all duration-300 group"
             >
-              <div className={`${category.color} w-12 h-12 rounded-full flex items-center justify-center mb-4 group-hover:scale-110 transition-transform`}>
-                <category.icon className="w-6 h-6 text-foreground" />
+              <div className={`${category.color} w-8 h-8 sm:w-12 sm:h-12 rounded-full flex items-center justify-center mb-3 sm:mb-4 group-hover:scale-110 transition-transform`}>
+                <category.icon className="w-4 h-4 sm:w-6 sm:h-6 text-foreground" />
               </div>
-              <h3 className="text-xl font-semibold mb-3">{category.title}</h3>
-              <div className="flex flex-wrap gap-2">
+              <h3 className="text-sm sm:text-xl font-semibold mb-2 sm:mb-3">{category.title}</h3>
+              <div className="flex flex-wrap gap-1 sm:gap-2">
                 {category.skills.map((skill, skillIndex) => (
                   <span
                     key={skillIndex}
-                    className="px-3 py-1 bg-secondary rounded-full text-sm font-medium text-foreground hover:bg-foreground hover:text-background transition-colors cursor-default"
+                    className="px-2 sm:px-3 py-0.5 sm:py-1 bg-secondary rounded-full text-xs sm:text-sm font-medium text-foreground hover:bg-foreground hover:text-background transition-colors cursor-default"
                   >
                     {skill}
                   </span>

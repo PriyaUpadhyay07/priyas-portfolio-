@@ -33,29 +33,29 @@ const Contact = () => {
   ];
 
   return (
-    <section id="contact" className="py-20 px-6 bg-secondary/30">
+    <section id="contact" className="py-12 sm:py-20 px-4 sm:px-6 bg-secondary/30">
       <div className="container mx-auto max-w-4xl">
-        <h2 className="text-4xl md:text-5xl font-bold mb-4 text-center">
+        <h2 className="text-2xl sm:text-4xl md:text-5xl font-bold mb-3 sm:mb-4 text-center">
           Let's <span className="highlight-pink">Connect!</span>
         </h2>
-        <p className="text-center text-muted-foreground mb-12">
+        <p className="text-center text-muted-foreground mb-8 sm:mb-12 text-sm sm:text-base">
           Feel free to reach out for collaborations or just a friendly hello
         </p>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6 mb-6 sm:mb-8">
           {contacts.map((contact, index) => (
             <a
               key={index}
               href={contact.link}
               target={contact.label !== "Email" ? "_blank" : undefined}
               rel={contact.label !== "Email" ? "noopener noreferrer" : undefined}
-              className="bg-white rounded-2xl p-6 shadow-lg border border-foreground/10 hover:shadow-xl hover:-translate-y-2 transition-all duration-300 group cursor-pointer"
+              className="bg-white rounded-xl sm:rounded-2xl p-4 sm:p-6 shadow-lg border border-foreground/10 hover:shadow-xl hover:-translate-y-2 transition-all duration-300 group cursor-pointer"
             >
-              <div className={`${contact.color} w-12 h-12 rounded-full flex items-center justify-center mb-4 group-hover:scale-110 transition-transform`}>
-                <contact.icon className="w-6 h-6 text-foreground" />
+              <div className={`${contact.color} w-10 h-10 sm:w-12 sm:h-12 rounded-full flex items-center justify-center mb-3 sm:mb-4 group-hover:scale-110 transition-transform`}>
+                <contact.icon className="w-5 h-5 sm:w-6 sm:h-6 text-foreground" />
               </div>
-              <p className="text-sm text-muted-foreground mb-1">{contact.label}</p>
-              <p className="font-medium text-foreground group-hover:text-foreground/80 transition-colors break-all">
+              <p className="text-xs sm:text-sm text-muted-foreground mb-1">{contact.label}</p>
+              <p className="font-medium text-foreground group-hover:text-foreground/80 transition-colors break-all text-sm sm:text-base">
                 {contact.value}
               </p>
             </a>
@@ -68,18 +68,18 @@ const Contact = () => {
             download="Priya_Upadhyay_Resume.pdf"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 px-8 py-4 bg-foreground text-background rounded-full font-semibold hover:scale-105 transition-transform shadow-lg"
+            className="inline-flex items-center gap-2 px-6 sm:px-8 py-3 sm:py-4 bg-foreground text-background rounded-full font-semibold hover:scale-105 transition-transform shadow-lg text-sm sm:text-base"
           >
-            <Download className="w-5 h-5" />
+            <Download className="w-4 h-4 sm:w-5 sm:h-5" />
             Download Resume
           </a>
         </div>
 
         {/* Decorative stickers */}
-        <div className="mt-12 flex justify-center gap-4">
-          <span className="text-3xl animate-float">✨</span>
-          <span className="text-3xl animate-float" style={{ animationDelay: "0.5s" }}>💌</span>
-          <span className="text-3xl animate-float" style={{ animationDelay: "1s" }}>🚀</span>
+        <div className="mt-8 sm:mt-12 flex justify-center gap-3 sm:gap-4">
+          <span className="text-2xl sm:text-3xl animate-float">✨</span>
+          <span className="text-2xl sm:text-3xl animate-float" style={{ animationDelay: "0.5s" }}>💌</span>
+          <span className="text-2xl sm:text-3xl animate-float" style={{ animationDelay: "1s" }}>🚀</span>
         </div>
       </div>
     </section>

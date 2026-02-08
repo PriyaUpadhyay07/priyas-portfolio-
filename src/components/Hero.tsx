@@ -56,10 +56,10 @@ const Hero = () => {
       ))}
 
       {/* Central content */}
-      <div className="text-center z-10 px-6 relative">
+      <div className="text-center z-10 px-4 sm:px-6 relative">
         {/* 3D Avatar */}
-        <div className="-mb-8 md:-mb-12 animate-fade-in-up">
-          <div className="w-[28rem] h-[28rem] md:w-[36rem] md:h-[36rem] mx-auto animate-float">
+        <div className="-mb-4 sm:-mb-8 md:-mb-12 animate-fade-in-up">
+          <div className="w-[16rem] h-[16rem] sm:w-[22rem] sm:h-[22rem] md:w-[32rem] md:h-[32rem] mx-auto animate-float">
             <img 
               src={avatarImage} 
               alt="Priya Upadhyay 3D Avatar" 
@@ -72,30 +72,30 @@ const Hero = () => {
         </div>
 
         {/* Name with stylish highlight */}
-        <h1 className="text-4xl md:text-6xl font-medium mb-4 animate-fade-in-up" style={{ animationDelay: "0.2s" }}>
+        <h1 className="text-2xl sm:text-3xl md:text-6xl font-medium mb-3 sm:mb-4 animate-fade-in-up" style={{ animationDelay: "0.2s" }}>
           Hi, I'm{" "}
           <span className="relative inline-block">
-            <span className="relative z-10 text-5xl md:text-8xl font-bold" style={{ fontFamily: "'Syne', 'Clash Display', sans-serif" }}>
+            <span className="relative z-10 text-3xl sm:text-4xl md:text-8xl font-bold" style={{ fontFamily: "'Syne', 'Clash Display', sans-serif" }}>
               Priya Upadhyay
             </span>
             <span className="absolute inset-0 bg-highlight-yellow/80 -rotate-1 -z-10 scale-105" style={{ clipPath: "polygon(0 40%, 100% 50%, 100% 90%, 0 85%)" }}></span>
           </span>
         </h1>
 
-        <p className="text-xl md:text-2xl text-muted-foreground mb-10 animate-fade-in-up font-medium" style={{ animationDelay: "0.4s" }}>
+        <p className="text-base sm:text-lg md:text-2xl text-muted-foreground mb-6 sm:mb-10 animate-fade-in-up font-medium px-2" style={{ animationDelay: "0.4s" }}>
           UI/UX Designer crafting beautiful digital experiences
         </p>
 
-        <div className="flex flex-wrap gap-4 justify-center animate-fade-in-up" style={{ animationDelay: "0.6s" }}>
+        <div className="flex flex-wrap gap-3 sm:gap-4 justify-center animate-fade-in-up" style={{ animationDelay: "0.6s" }}>
           <button
             onClick={() => document.getElementById("projects")?.scrollIntoView({ behavior: "smooth" })}
-            className="px-8 py-3 bg-foreground text-background rounded-full font-semibold hover:scale-105 transition-transform shadow-lg"
+            className="px-5 sm:px-8 py-2.5 sm:py-3 bg-foreground text-background rounded-full font-semibold hover:scale-105 transition-transform shadow-lg text-sm sm:text-base"
           >
             View Projects
           </button>
           <button
             onClick={() => document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" })}
-            className="px-8 py-3 border-2 border-foreground text-foreground rounded-full font-semibold hover:bg-foreground hover:text-background transition-all shadow-lg"
+            className="px-5 sm:px-8 py-2.5 sm:py-3 border-2 border-foreground text-foreground rounded-full font-semibold hover:bg-foreground hover:text-background transition-all shadow-lg text-sm sm:text-base"
           >
             Get in Touch
           </button>

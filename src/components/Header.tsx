@@ -38,12 +38,12 @@ const Header = () => {
           : "bg-transparent"
       }`}
     >
-      <nav className="container mx-auto px-6 py-5">
+      <nav className="container mx-auto px-4 sm:px-6 py-3 sm:py-5">
         <div className="flex items-center justify-between">
           {/* Left: Name with fancy font */}
           <button
             onClick={() => scrollToSection("home")}
-            className="text-3xl md:text-4xl text-foreground hover:opacity-80 transition-opacity"
+            className="text-xl sm:text-3xl md:text-4xl text-foreground hover:opacity-80 transition-opacity"
             style={{ fontFamily: "'Pacifico', cursive" }}
           >
             Priya Upadhyay
