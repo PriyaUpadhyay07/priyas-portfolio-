@@ -1,4 +1,4 @@
-import { Linkedin, Twitter, Heart } from "lucide-react";
+import { Linkedin, Twitter, Heart, Dribbble } from "lucide-react";
 const Footer = () => {
   const scrollToSection = (id: string) => {
     const element = document.getElementById(id);
