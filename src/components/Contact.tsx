@@ -3,6 +3,7 @@ import { Mail, Linkedin, Twitter, Download } from "lucide-react";
 const Contact = () => {
   const contacts = [
     {
+      type: "icon" as const,
       icon: Mail,
       label: "Email",
       value: "upadhyaypriya974@gmail.com",
@@ -10,13 +11,7 @@ const Contact = () => {
       color: "bg-highlight-yellow",
     },
     {
-      icon: Mail,
-      label: "Email",
-      value: "upadhyaypriya479@gmail.com",
-      link: "mailto:upadhyaypriya479@gmail.com",
-      color: "bg-highlight-pink",
-    },
-    {
+      type: "icon" as const,
       icon: Linkedin,
       label: "LinkedIn",
       value: "linkedin.com/in/priya-upadhyay68",
@@ -24,11 +19,20 @@ const Contact = () => {
       color: "bg-highlight-blue",
     },
     {
+      type: "icon" as const,
       icon: Twitter,
       label: "Twitter/X",
       value: "@Priya_Upadhyay_",
       link: "https://x.com/Priya_Upadhyay_",
       color: "bg-highlight-green",
+    },
+    {
+      type: "image" as const,
+      logo: "https://cdn.simpleicons.org/dribbble/EA4C89",
+      label: "Dribbble",
+      value: "dribbble.com/priya0001",
+      link: "https://dribbble.com/priya0001",
+      color: "bg-highlight-pink",
     },
   ];
 
@@ -39,7 +43,7 @@ const Contact = () => {
           Let's <span className="highlight-pink">Connect!</span>
         </h2>
         <p className="text-center text-muted-foreground mb-8 sm:mb-12 text-sm sm:text-base">
-          Feel free to reach out for collaborations or just a friendly hello
+          Feel free to reach out for collaborations
         </p>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6 mb-6 sm:mb-8">
@@ -51,8 +55,14 @@ const Contact = () => {
               rel={contact.label !== "Email" ? "noopener noreferrer" : undefined}
               className="bg-white rounded-xl sm:rounded-2xl p-4 sm:p-6 shadow-lg border border-foreground/10 hover:shadow-xl hover:-translate-y-2 transition-all duration-300 group cursor-pointer"
             >
-              <div className={`${contact.color} w-10 h-10 sm:w-12 sm:h-12 rounded-full flex items-center justify-center mb-3 sm:mb-4 group-hover:scale-110 transition-transform`}>
-                <contact.icon className="w-5 h-5 sm:w-6 sm:h-6 text-foreground" />
+              <div
+                className={`${contact.color} w-10 h-10 sm:w-12 sm:h-12 rounded-full flex items-center justify-center mb-3 sm:mb-4 group-hover:scale-110 transition-transform p-2`}
+              >
+                {contact.type === "icon" ? (
+                  <contact.icon className="w-5 h-5 sm:w-6 sm:h-6 text-foreground" />
+                ) : (
+                  <img src={contact.logo} alt={`${contact.label} logo`} className="w-full h-full object-contain" />
+                )}
               </div>
               <p className="text-xs sm:text-sm text-muted-foreground mb-1">{contact.label}</p>
               <p className="font-medium text-foreground group-hover:text-foreground/80 transition-colors break-all text-sm sm:text-base">
@@ -73,13 +83,6 @@ const Contact = () => {
             <Download className="w-4 h-4 sm:w-5 sm:h-5" />
             Download Resume
           </a>
-        </div>
-
-        {/* Decorative stickers */}
-        <div className="mt-8 sm:mt-12 flex justify-center gap-3 sm:gap-4">
-          <span className="text-2xl sm:text-3xl animate-float">✨</span>
-          <span className="text-2xl sm:text-3xl animate-float" style={{ animationDelay: "0.5s" }}>💌</span>
-          <span className="text-2xl sm:text-3xl animate-float" style={{ animationDelay: "1s" }}>🚀</span>
         </div>
       </div>
     </section>

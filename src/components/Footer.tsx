@@ -13,7 +13,7 @@ const Footer = () => {
         <div className="flex flex-col md:flex-row items-center justify-between gap-6">
           {/* Quick Links */}
           <div className="flex flex-wrap gap-6 justify-center md:justify-start">
-            {["About", "Skills", "Projects", "Contact"].map(item => <button key={item} onClick={() => scrollToSection(item.toLowerCase())} className="text-foreground/70 hover:text-foreground transition-colors font-medium">
+            {["Skills", "Projects", "About", "Contact"].map(item => <button key={item} onClick={() => scrollToSection(item.toLowerCase())} className="text-foreground/70 hover:text-foreground transition-colors font-medium">
                 {item}
               </button>)}
           </div>
