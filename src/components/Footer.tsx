@@ -35,6 +35,9 @@ const Footer = () => {
             <a href="https://x.com/Priya_Upadhyay_" target="_blank" rel="noopener noreferrer" className="w-10 h-10 bg-foreground/10 rounded-full flex items-center justify-center hover:bg-foreground hover:text-background transition-all hover:scale-110">
               <Twitter className="w-5 h-5" />
             </a>
+            <a href="https://dribbble.com/priya0001" target="_blank" rel="noopener noreferrer" className="w-10 h-10 bg-foreground/10 rounded-full flex items-center justify-center hover:bg-foreground hover:text-background transition-all hover:scale-110">
+              <Dribbble className="w-5 h-5" />
+            </a>
           </div>
         </div>
       </div>
