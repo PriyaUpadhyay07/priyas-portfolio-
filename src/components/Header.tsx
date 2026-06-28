@@ -22,11 +22,12 @@ const Header = () => {
     }
   };
 
+  const navItems = ["Home", "Skills", "Projects", "About", "Contact"];
   const navColors: { [key: string]: string } = {
     Home: "bg-[#FFF9C4]",
-    About: "bg-[#FFE0E9]",
     Skills: "bg-[#E3F2FD]",
     Projects: "bg-[#E8F5E9]",
+    About: "bg-[#FFE0E9]",
     Contact: "bg-[#F3E5F5]",
   };
 
@@ -51,7 +52,7 @@ const Header = () => {
 
           {/* Center: Desktop Navigation - Rounded pill shape */}
           <div className="hidden md:flex items-center gap-1 bg-white/90 backdrop-blur-md rounded-full px-2 py-2 shadow-lg border-2 border-black/5">
-            {["Home", "About", "Skills", "Projects", "Contact"].map((item) => (
+            {navItems.map((item) => (
               <button
                 key={item}
                 onClick={() => scrollToSection(item.toLowerCase())}
@@ -87,7 +88,7 @@ const Header = () => {
         {isMobileMenuOpen && (
           <div className="md:hidden mt-4 glass rounded-lg p-4">
             <div className="flex flex-col gap-4">
-              {["Home", "About", "Skills", "Projects", "Contact"].map((item) => (
+              {navItems.map((item) => (
                 <button
                   key={item}
                   onClick={() => scrollToSection(item.toLowerCase())}
