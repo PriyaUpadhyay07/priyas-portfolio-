@@ -53,14 +53,11 @@ const About = () => {
             </h2>
 
             <p className="text-base sm:text-lg text-foreground/80 mb-5 leading-relaxed">
-              I enjoy designing digital experiences that are simple to use, visually clean, and focused on solving real
-              user problems. My goal is to create interfaces that not only look good but also help businesses achieve
-              meaningful results.
+              I enjoy designing digital experiences that are <span className="highlight-yellow font-semibold">simple to use</span>, visually clean, and focused on <span className="highlight-pink font-semibold">solving real</span> user problems. My goal is to create interfaces that not only look good but also help businesses <span className="sketchy-circle inline-block font-semibold">achieve results</span>.
             </p>
 
             <p className="text-base sm:text-lg text-foreground/80 leading-relaxed">
-              I also enjoy using modern AI-powered design tools to explore ideas faster and deliver high-quality user
-              experiences more efficiently.
+              I also enjoy using modern <span className="highlight-blue font-semibold">AI design tools</span> to explore ideas faster and deliver high-quality user experiences <span className="highlight-green font-semibold">more efficiently</span>.
             </p>
           </div>
         </div>
