@@ -1,3 +1,5 @@
+import figmaLogo from "@/assets/figma-logo.svg";
+
 interface Tool {
   name: string;
   logo: string;
@@ -7,7 +9,7 @@ const TOOL_LOGOS: Record<string, string> = {
   Lovable: "https://lovable.dev/favicon.ico",
   Supabase: "https://cdn.simpleicons.org/supabase/3FCF8E",
   Framer: "https://cdn.simpleicons.org/framer/0055FF",
-  Figma: "https://cdn.simpleicons.org/figma/F24E1E",
+  Figma: figmaLogo,
   "v0 by Vercel": "https://cdn.simpleicons.org/v0/000000",
   "Google AI Studio": "https://cdn.simpleicons.org/googlegemini/8E75B2",
 };
