@@ -1,4 +1,4 @@
-import { Mail, Linkedin, Twitter, Download } from "lucide-react";
+import { Mail, Linkedin, Download } from "lucide-react";
 
 const Contact = () => {
   const contacts = [
@@ -17,14 +17,6 @@ const Contact = () => {
       value: "linkedin.com/in/priya-upadhyay68",
       link: "https://www.linkedin.com/in/priya-upadhyay68/",
       color: "bg-highlight-blue",
-    },
-    {
-      type: "icon" as const,
-      icon: Twitter,
-      label: "Twitter/X",
-      value: "@Priya_Upadhyay_",
-      link: "https://x.com/Priya_Upadhyay_",
-      color: "bg-highlight-green",
     },
     {
       type: "image" as const,
