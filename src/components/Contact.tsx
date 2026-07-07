@@ -38,14 +38,14 @@ const Contact = () => {
           Feel free to reach out for collaborations
         </p>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6 mb-6 sm:mb-8">
+        <div className="flex flex-wrap justify-center gap-4 sm:gap-6 mb-6 sm:mb-8">
           {contacts.map((contact, index) => (
             <a
               key={index}
               href={contact.link}
               target={contact.label !== "Email" ? "_blank" : undefined}
               rel={contact.label !== "Email" ? "noopener noreferrer" : undefined}
-              className="bg-white rounded-xl sm:rounded-2xl p-4 sm:p-6 shadow-lg border border-foreground/10 hover:shadow-xl hover:-translate-y-2 transition-all duration-300 group cursor-pointer"
+              className="w-full sm:w-[calc(50%-0.75rem)] bg-white rounded-xl sm:rounded-2xl p-4 sm:p-6 shadow-lg border border-foreground/10 hover:shadow-xl hover:-translate-y-2 transition-all duration-300 group cursor-pointer"
             >
               <div
                 className={`${contact.color} w-10 h-10 sm:w-12 sm:h-12 rounded-full flex items-center justify-center mb-3 sm:mb-4 group-hover:scale-110 transition-transform p-2`}
