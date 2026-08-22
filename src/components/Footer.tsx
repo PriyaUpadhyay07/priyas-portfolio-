@@ -1,4 +1,5 @@
 import { Linkedin, Heart, Dribbble } from "lucide-react";
+import { ContraStar } from "./ContraStar";
 const Footer = () => {
   const scrollToSection = (id: string) => {
     const element = document.getElementById(id);
@@ -31,6 +32,9 @@ const Footer = () => {
           <div className="flex gap-4">
             <a href="https://www.linkedin.com/in/priya-upadhyay68/" target="_blank" rel="noopener noreferrer" className="w-10 h-10 bg-foreground/10 rounded-full flex items-center justify-center hover:bg-foreground hover:text-background transition-all hover:scale-110">
               <Linkedin className="w-5 h-5" />
+            </a>
+            <a href="https://contra.com/priya_upadhyay_bkxvxwme?referralExperimentNid=DEFAULT_REFERRAL_PROGRAM&referrerUsername=priya_upadhyay_bkxvxwme" target="_blank" rel="noopener noreferrer" aria-label="Contra profile" className="w-10 h-10 bg-foreground/10 rounded-full flex items-center justify-center hover:bg-foreground hover:text-background transition-all hover:scale-110">
+              <ContraStar className="w-5 h-5" />
             </a>
             <a href="https://dribbble.com/priya0001" target="_blank" rel="noopener noreferrer" className="w-10 h-10 bg-foreground/10 rounded-full flex items-center justify-center hover:bg-foreground hover:text-background transition-all hover:scale-110">
               <Dribbble className="w-5 h-5" />
