@@ -1,4 +1,5 @@
 import { Mail, Linkedin, Download } from "lucide-react";
+import { ContraStar } from "./ContraStar";
 
 const Contact = () => {
   const contacts = [
@@ -17,6 +18,14 @@ const Contact = () => {
       value: "linkedin.com/in/priya-upadhyay68",
       link: "https://www.linkedin.com/in/priya-upadhyay68/",
       color: "bg-highlight-blue",
+    },
+    {
+      type: "icon" as const,
+      icon: ContraStar,
+      label: "Contra",
+      value: "contra.com/priya_upadhyay_bkxvxwme",
+      link: "https://contra.com/priya_upadhyay_bkxvxwme?referralExperimentNid=DEFAULT_REFERRAL_PROGRAM&referrerUsername=priya_upadhyay_bkxvxwme",
+      color: "bg-highlight-purple",
     },
     {
       type: "image" as const,

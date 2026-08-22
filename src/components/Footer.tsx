@@ -1,4 +1,5 @@
 import { Linkedin, Heart, Dribbble } from "lucide-react";
+import { ContraStar } from "./ContraStar";
 const Footer = () => {
   const scrollToSection = (id: string) => {
     const element = document.getElementById(id);
