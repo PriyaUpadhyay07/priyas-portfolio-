@@ -22,11 +22,12 @@ const Header = () => {
     }
   };
 
-  const navItems = ["Home", "Skills", "Projects", "About", "Contact"];
+  const navItems = ["Home", "Skills", "Projects", "Case Studies", "About", "Contact"];
   const navColors: { [key: string]: string } = {
     Home: "bg-[#FFF9C4]",
     Skills: "bg-[#E3F2FD]",
     Projects: "bg-[#E8F5E9]",
+    "Case Studies": "bg-[#FFF3E0]",
     About: "bg-[#FFE0E9]",
     Contact: "bg-[#F3E5F5]",
   };
