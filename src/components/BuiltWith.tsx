@@ -1,4 +1,6 @@
 import figmaLogo from "@/assets/figma-logo.svg";
+import antigravityLogoAsset from "@/assets/google-antigravity.jpg.asset.json";
+import netlifyLogoAsset from "@/assets/netlify-logo.jpg.asset.json";
 
 interface Tool {
   name: string;
@@ -12,6 +14,8 @@ const TOOL_LOGOS: Record<string, string> = {
   Figma: figmaLogo,
   "v0 by Vercel": "https://cdn.simpleicons.org/v0/000000",
   "Google AI Studio": "https://cdn.simpleicons.org/googlegemini/8E75B2",
+  "Google Antigravity": antigravityLogoAsset.url,
+  Netlify: netlifyLogoAsset.url,
 };
 
 const BuiltWith = ({ tools }: { tools: string[] }) => {

@@ -48,7 +48,7 @@ const Projects = () => {
       link: "https://teal-treacle-66ee62.netlify.app/",
       color: "bg-highlight-purple",
       image: rareBeautyImage,
-      builtWith: [] as string[],
+      builtWith: ["Google Antigravity", "Netlify"],
     },
     {
       title: "Fashion Brand Ecommerce Animated Web Design",
@@ -110,10 +110,13 @@ const Projects = () => {
             const isGallery = project.isGallery;
 
             if (hasLink) {
+              const projectLink = project.link;
+              if (!projectLink) return null;
+
               return (
                 <a
                   key={index}
-                  href={project.link!}
+                  href={projectLink}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="group bg-white rounded-2xl sm:rounded-3xl p-4 sm:p-8 shadow-lg border border-foreground/10 hover:shadow-2xl hover:-translate-y-3 transition-all duration-300 cursor-pointer"
