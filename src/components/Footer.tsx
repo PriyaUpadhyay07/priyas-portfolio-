@@ -1,4 +1,4 @@
-import { Linkedin, Heart, Dribbble } from "lucide-react";
+import { Linkedin, Dribbble } from "lucide-react";
 import { ContraStar } from "./ContraStar";
 const Footer = () => {
   const scrollToSection = (id: string) => {
@@ -22,10 +22,6 @@ const Footer = () => {
           {/* Copyright */}
           <div className="flex items-center gap-2 text-foreground/70">
             <span>© 2026 Priya Upadhyay</span>
-            <span>·</span>
-            <span className="flex items-center gap-1">
-              Designed with <Heart className="w-4 h-4 fill-current text-red-500" />
-            </span>
           </div>
 
           {/* Social Links */}

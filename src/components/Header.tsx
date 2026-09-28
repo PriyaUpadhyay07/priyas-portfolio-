@@ -23,6 +23,7 @@ const Header = () => {
   };
 
   const navItems = ["Home", "Skills", "Projects", "Case Studies", "About", "Contact"];
+  const getSectionId = (item: string) => item === "Case Studies" ? "case-studies" : item.toLowerCase();
   const navColors: { [key: string]: string } = {
     Home: "bg-[#FFF9C4]",
     Skills: "bg-[#E3F2FD]",
@@ -56,7 +57,7 @@ const Header = () => {
             {navItems.map((item) => (
               <button
                 key={item}
-                onClick={() => scrollToSection(item.toLowerCase())}
+                onClick={() => scrollToSection(getSectionId(item))}
                 className="relative px-5 py-2 text-foreground font-medium transition-all duration-300 rounded-full group"
               >
                 <span className="relative z-10">{item}</span>
@@ -92,7 +93,7 @@ const Header = () => {
               {navItems.map((item) => (
                 <button
                   key={item}
-                  onClick={() => scrollToSection(item.toLowerCase())}
+                  onClick={() => scrollToSection(getSectionId(item))}
                   className="text-foreground hover:text-primary font-medium transition-colors text-left"
                 >
                   {item}
