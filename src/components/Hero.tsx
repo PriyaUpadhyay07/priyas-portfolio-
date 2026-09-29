@@ -25,8 +25,9 @@ const Hero = () => {
     >
       <div className="container mx-auto max-w-5xl relative z-10">
         {/* Main heading - centered */}
+        <div className="text-center mb-12 sm:mb-20 animate-fade-in-up">
         <h1
-          className="text-center text-3xl sm:text-5xl md:text-7xl font-bold mb-12 sm:mb-20 animate-fade-in-up"
+          className="text-3xl sm:text-5xl md:text-7xl font-bold"
           style={{ fontFamily: "'Syne', 'Clash Display', sans-serif" }}
         >
           I'm{" "}
@@ -38,6 +39,10 @@ const Hero = () => {
             ></span>
           </span>
         </h1>
+          <p className="mt-3 sm:mt-5 text-base sm:text-xl md:text-2xl font-semibold text-muted-foreground">
+            &amp; AI Product Builder
+          </p>
+        </div>
 
         {/* How I can help - left aligned */}
         <div className="max-w-3xl animate-fade-in-up" style={{ animationDelay: "0.2s" }}>
