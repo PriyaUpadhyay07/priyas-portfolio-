@@ -4,9 +4,9 @@ import startupIdeasImage from "@/assets/startup-ideas-ai.png";
 import bakeryImage from "@/assets/bakery-website.png";
 import movieAppImage from "@/assets/movie-app.png";
 import rareBeautyImage from "@/assets/rare-beauty-website.png";
-import brandForgeImage from "@/assets/project-previews/brandforge.jpg.asset.json";
-import ideaValidatorImage from "@/assets/project-previews/idea-validator.jpg.asset.json";
-import roninImage from "@/assets/project-previews/ronin-x.jpg.asset.json";
+import brandForgeImage from "@/assets/project-previews/brandforge.jpg";
+import ideaValidatorImage from "@/assets/project-previews/idea-validator.jpg";
+import roninImage from "@/assets/project-previews/ronin-x.jpg";
 
 interface Project {
   title: string;
@@ -50,7 +50,7 @@ const Projects = () => {
           description: "An AI-assisted workspace that turns a point of view into a focused visual identity.",
           link: "https://brandforge-drab.vercel.app/",
           color: "bg-highlight-green",
-          image: brandForgeImage.url,
+          image: brandForgeImage,
           builtWith: ["Replit", "Vercel", "Claude"],
         },
         {
@@ -58,7 +58,7 @@ const Projects = () => {
           description: "A guided AI product that checks an idea and creates a practical validation plan.",
           link: "https://idea-validator-check.netlify.app/",
           color: "bg-highlight-purple",
-          image: ideaValidatorImage.url,
+          image: ideaValidatorImage,
           builtWith: ["GPT", "Netlify"],
         },
       ],
@@ -88,7 +88,7 @@ const Projects = () => {
           description: "An immersive gaming website concept with bold art direction and dynamic storytelling.",
           link: "https://gaming-site-web-design.netlify.app/",
           color: "bg-highlight-orange",
-          image: roninImage.url,
+          image: roninImage,
           builtWith: ["Replit", "Claude", "Netlify"],
         },
       ],

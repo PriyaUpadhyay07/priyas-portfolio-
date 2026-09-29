@@ -1,12 +1,12 @@
 import figmaLogo from "@/assets/figma-logo.svg";
 import antigravityLogo from "@/assets/google-antigravity.png";
 import netlifyLogo from "@/assets/netlify-logo.png";
-import replitLogo from "@/assets/tool-logos/replit.svg.asset.json";
-import vercelLogo from "@/assets/tool-logos/vercel.svg.asset.json";
-import claudeLogo from "@/assets/tool-logos/claude.svg.asset.json";
-import openaiLogo from "@/assets/tool-logos/openai.svg.asset.json";
-import supabaseLogo from "@/assets/tool-logos/supabase.svg.asset.json";
-import framerLogo from "@/assets/tool-logos/framer.svg.asset.json";
+import replitLogo from "@/assets/tool-logos/replit.svg";
+import vercelLogo from "@/assets/tool-logos/vercel.svg";
+import claudeLogo from "@/assets/tool-logos/claude.svg";
+import openaiLogo from "@/assets/tool-logos/openai.svg";
+import supabaseLogo from "@/assets/tool-logos/supabase.svg";
+import framerLogo from "@/assets/tool-logos/framer.svg";
 
 interface Tool {
   name: string;
@@ -15,15 +15,15 @@ interface Tool {
 
 const TOOL_LOGOS: Record<string, string> = {
   Lovable: "https://lovable.dev/favicon.ico",
-  Supabase: supabaseLogo.url,
-  Framer: framerLogo.url,
+  Supabase: supabaseLogo,
+  Framer: framerLogo,
   Figma: figmaLogo,
   "Google Antigravity": antigravityLogo,
   Netlify: netlifyLogo,
-  Replit: replitLogo.url,
-  Vercel: vercelLogo.url,
-  Claude: claudeLogo.url,
-  GPT: openaiLogo.url,
+  Replit: replitLogo,
+  Vercel: vercelLogo,
+  Claude: claudeLogo,
+  GPT: openaiLogo,
 };
 
 const BuiltWith = ({ tools }: { tools: string[] }) => {
