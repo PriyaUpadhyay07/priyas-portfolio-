@@ -8,11 +8,6 @@ import openaiLogo from "@/assets/tool-logos/openai.svg";
 import supabaseLogo from "@/assets/tool-logos/supabase.svg";
 import framerLogo from "@/assets/tool-logos/framer.svg";
 
-interface Tool {
-  name: string;
-  logo: string;
-}
-
 const TOOL_LOGOS: Record<string, string> = {
   Lovable: "https://lovable.dev/favicon.ico",
   Supabase: supabaseLogo,
@@ -35,12 +30,12 @@ const BuiltWith = ({ tools }: { tools: string[] }) => {
           <div
             key={tool}
             title={tool}
-            className="w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-white border border-foreground/10 shadow-sm flex items-center justify-center p-1.5 hover:scale-110 transition-transform"
+            className="w-8 h-8 sm:w-9 sm:h-9 rounded-full bg-card border border-foreground/15 shadow-sm flex items-center justify-center p-1 hover:scale-110 transition-transform overflow-hidden"
           >
             <img
               src={TOOL_LOGOS[tool] || ""}
               alt={`${tool} logo`}
-              className="w-full h-full object-contain"
+              className={`w-full h-full object-contain ${tool === "Google Antigravity" || tool === "Netlify" ? "scale-125" : ""}`}
               loading="lazy"
             />
           </div>
