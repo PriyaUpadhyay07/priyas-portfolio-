@@ -1,5 +1,5 @@
 const Hero = () => {
-  const expertise = ["UI Design", "UX Research", "Prototyping", "Mobile App Design", "Responsive Design"];
+  const expertise = ["UI Design", "UX Research", "Prototyping", "Mobile App Design", "Vibe Coding"];
   const industries = ["SaaS", "AI Products", "Beauty Brands", "Startups", "Real Estate"];
 
   const tagColors = [
