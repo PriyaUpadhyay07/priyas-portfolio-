@@ -1,6 +1,6 @@
 import figmaLogo from "@/assets/figma-logo.svg";
-import antigravityLogo from "@/assets/google-antigravity.png";
-import netlifyLogo from "@/assets/netlify-logo.png";
+import antigravityLogo from "@/assets/tool-logos/google-antigravity-clean.png.asset.json";
+import netlifyLogo from "@/assets/tool-logos/netlify-clean.png.asset.json";
 import replitLogo from "@/assets/tool-logos/replit.svg";
 import vercelLogo from "@/assets/tool-logos/vercel.svg";
 import claudeLogo from "@/assets/tool-logos/claude.svg";
@@ -13,8 +13,8 @@ const TOOL_LOGOS: Record<string, string> = {
   Supabase: supabaseLogo,
   Framer: framerLogo,
   Figma: figmaLogo,
-  "Google Antigravity": antigravityLogo,
-  Netlify: netlifyLogo,
+  "Google Antigravity": antigravityLogo.url,
+  Netlify: netlifyLogo.url,
   Replit: replitLogo,
   Vercel: vercelLogo,
   Claude: claudeLogo,
@@ -35,7 +35,7 @@ const BuiltWith = ({ tools }: { tools: string[] }) => {
             <img
               src={TOOL_LOGOS[tool] || ""}
               alt={`${tool} logo`}
-              className={`w-full h-full object-contain ${tool === "Google Antigravity" || tool === "Netlify" ? "scale-125" : ""}`}
+              className={`w-full h-full object-contain ${tool === "Google Antigravity" || tool === "Netlify" ? "scale-110" : ""}`}
               loading="lazy"
             />
           </div>
