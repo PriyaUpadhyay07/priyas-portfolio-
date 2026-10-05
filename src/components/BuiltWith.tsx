@@ -1,5 +1,5 @@
 import figmaLogo from "@/assets/figma-logo.svg";
-import antigravityLogo from "@/assets/tool-logos/google-antigravity-clean.png";
+import antigravityLogo from "@/assets/tool-logos/google-antigravity-official.png.asset.json";
 import netlifyLogo from "@/assets/tool-logos/netlify-clean.png";
 import replitLogo from "@/assets/tool-logos/replit.svg";
 import vercelLogo from "@/assets/tool-logos/vercel.svg";
@@ -13,7 +13,7 @@ const TOOL_LOGOS: Record<string, string> = {
   Supabase: supabaseLogo,
   Framer: framerLogo,
   Figma: figmaLogo,
-  "Google Antigravity": antigravityLogo,
+  "Google Antigravity": antigravityLogo.url,
   Netlify: netlifyLogo,
   Replit: replitLogo,
   Vercel: vercelLogo,
