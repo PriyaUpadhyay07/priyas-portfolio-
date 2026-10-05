@@ -24,8 +24,9 @@ import ideaValidatorShowcase from "@/assets/project-media/idea-validator-showcas
 const Projects = () => {
   const [selectedProject, setSelectedProject] = useState<Project | null>(null);
 
-  const projectGroups: { title: string; accent: string; projects: Project[] }[] = [
+  const projectGroups: { id: string; title: string; accent: string; projects: Project[] }[] = [
     {
+      id: "ui-ux-design-projects",
       title: "UI/UX Design Projects",
       accent: "highlight-blue",
       projects: [
@@ -67,6 +68,7 @@ const Projects = () => {
       ],
     },
     {
+      id: "vibe-coded-ai-projects",
       title: "Vibe-Coded AI Products",
       accent: "highlight-yellow",
       projects: [
@@ -128,7 +130,8 @@ const Projects = () => {
       ],
     },
     {
-      title: "Website Design Projects",
+      id: "web-animation-projects",
+      title: "Web & Motion Design Projects",
       accent: "highlight-pink",
       projects: [
         {
@@ -145,7 +148,7 @@ const Projects = () => {
           ],
         },
         {
-          title: "Rare Beauty E-Commerce",
+          title: "Rare Beauty Landing Page Redesign",
           description: "A beauty e-commerce experience with elegant product showcases and smooth animations.",
           link: "https://teal-treacle-66ee62.netlify.app/",
           color: "bg-highlight-purple",
@@ -177,21 +180,17 @@ const Projects = () => {
   const renderCard = (project: Project) => (
     <article
       key={project.title}
-      role="button"
-      tabIndex={0}
-      aria-label={`View ${project.title} details`}
-      onClick={() => setSelectedProject(project)}
-      onKeyDown={(event) => {
-        if (event.key === "Enter" || event.key === " ") {
-          event.preventDefault();
-          setSelectedProject(project);
-        }
-      }}
-      className="group flex cursor-pointer flex-col bg-card rounded-2xl sm:rounded-3xl p-4 sm:p-7 shadow-lg border border-foreground/10 hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
+      className="group flex flex-col bg-card rounded-2xl sm:rounded-3xl p-4 sm:p-7 shadow-lg border border-foreground/10 hover:shadow-2xl hover:-translate-y-2 transition-all duration-300"
     >
-      <div className={`${project.color} w-full aspect-[16/9] rounded-xl sm:rounded-2xl mb-4 sm:mb-6 flex items-center justify-center overflow-hidden`}>
+      <Button
+        type="button"
+        variant="ghost"
+        aria-label={`Open ${project.title} details`}
+        onClick={() => setSelectedProject(project)}
+        className={`${project.color} h-auto w-full aspect-[16/9] rounded-xl sm:rounded-2xl mb-4 sm:mb-6 p-0 flex items-center justify-center overflow-hidden focus-visible:ring-offset-2`}
+      >
         <img src={project.image} alt={`${project.title} preview`} className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500" loading="lazy" />
-      </div>
+      </Button>
       <h3 className="text-lg sm:text-2xl font-bold mb-2 sm:mb-3 group-hover:text-foreground/80 transition-colors">
         {project.title}
       </h3>
@@ -219,7 +218,7 @@ const Projects = () => {
 
         <div className="space-y-12 sm:space-y-16">
           {projectGroups.map((group) => (
-            <div key={group.title}>
+            <div key={group.title} id={group.id} className="scroll-mt-28">
               <div className="flex items-center gap-4 mb-5 sm:mb-8">
                 <h3 className={`text-xl sm:text-3xl font-bold shrink-0 ${group.accent}`}>{group.title}</h3>
                 <div className="h-px bg-border grow" aria-hidden="true" />

@@ -36,10 +36,10 @@ interface ProjectDetailDrawerProps {
 
 const ProjectDetailDrawer = ({ project, onOpenChange }: ProjectDetailDrawerProps) => (
   <Drawer open={project !== null} onOpenChange={onOpenChange} shouldScaleBackground={false}>
-    <DrawerContent className="max-h-[92vh] overflow-y-auto rounded-t-3xl border-x-0 border-b-0 border-t-4 border-foreground p-0">
+    <DrawerContent className="max-h-[92dvh] overflow-y-auto overscroll-contain rounded-t-3xl border-x-0 border-b-0 border-t-4 border-foreground p-0">
       {project && (
-        <div className="mx-auto w-full max-w-6xl px-4 pb-10 pt-3 sm:px-8 sm:pb-14">
-          <div className="sticky top-3 z-20 flex justify-end">
+        <div className="mx-auto w-full max-w-5xl px-4 pb-8 pt-3 sm:px-8 sm:pb-10">
+          <div className="sticky top-2 z-20 flex h-10 justify-end">
             <DrawerClose asChild>
               <Button type="button" size="icon" variant="outline" className="rounded-full bg-background shadow-md" aria-label="Close project details">
                 <X />
@@ -47,37 +47,40 @@ const ProjectDetailDrawer = ({ project, onOpenChange }: ProjectDetailDrawerProps
             </DrawerClose>
           </div>
 
-          <div className="mt-1 grid gap-4 sm:gap-6">
+          <div className="mt-1 grid gap-3 sm:gap-4">
             {(project.media?.length ? project.media : [{ type: "image" as const, src: project.image, alt: `${project.title} preview` }]).map((item, index) => (
               <div key={`${item.src}-${index}`} className="overflow-hidden rounded-xl border-2 border-foreground bg-muted shadow-lg sm:rounded-2xl">
                 {item.type === "video" ? (
                   <video
                     src={item.src}
-                    className="aspect-video w-full bg-foreground object-contain"
+                    className="mx-auto h-auto max-h-[38dvh] w-full bg-foreground object-contain"
                     controls
+                    autoPlay
+                    loop
+                    muted
                     playsInline
-                    preload="metadata"
+                    preload="auto"
                     aria-label={`${project.title} walkthrough video`}
                   />
                 ) : (
                   <img
                     src={item.src}
                     alt={item.alt || `${project.title} project image ${index + 1}`}
-                    className="h-auto max-h-[76vh] w-full object-contain"
+                    className="mx-auto h-auto max-h-[38dvh] w-full object-contain"
                   />
                 )}
               </div>
             ))}
           </div>
 
-          <div className="mx-auto max-w-3xl py-8 sm:py-12">
-            <DrawerTitle className="text-2xl font-bold sm:text-4xl">{project.title}</DrawerTitle>
+          <div className="mx-auto max-w-3xl py-6 sm:py-8">
+            <DrawerTitle className="text-2xl font-bold sm:text-3xl">{project.title}</DrawerTitle>
             <DrawerDescription className="mt-2 text-sm leading-relaxed sm:text-base">{project.description}</DrawerDescription>
             <div className="mt-5">
               <BuiltWith tools={project.builtWith} />
             </div>
 
-            <section className="mt-8" aria-labelledby="project-about-heading">
+            <section className="mt-6" aria-labelledby="project-about-heading">
               <h3 id="project-about-heading" className="text-xl font-bold sm:text-2xl">
                 About
               </h3>
@@ -103,7 +106,7 @@ const ProjectDetailDrawer = ({ project, onOpenChange }: ProjectDetailDrawerProps
               </section>
             )}
 
-            <Button asChild size="lg" className="mt-9 w-full rounded-full sm:mx-auto sm:flex sm:max-w-sm">
+            <Button asChild size="lg" className="mt-7 w-full rounded-full sm:mx-auto sm:flex sm:max-w-sm">
               <a href={project.link} target="_blank" rel="noopener noreferrer">
                 View Project
                 <ExternalLink />
