@@ -1,6 +1,6 @@
 ## Active tasks
-- [ ] Fix project drawer readability at normal zoom and keep external View Project links
-- [ ] Replace both resume links with the newly uploaded PDF
-- [ ] Add project-category dropdown navigation with working anchors
-- [ ] Rename Rare Beauty and autoplay project videos
-- [ ] Replace the Google Antigravity logo
+- [x] Fix project drawer readability at normal zoom and keep external View Project links
+- [x] Replace both resume links with the newly uploaded PDF
+- [x] Add project-category dropdown navigation with working anchors
+- [x] Rename Rare Beauty and autoplay project videos
+- [x] Replace the Google Antigravity logo and restore local preview media delivery
