@@ -180,30 +180,35 @@ const Projects = () => {
   const renderCard = (project: Project) => (
     <article
       key={project.title}
-      className="group flex flex-col bg-card rounded-2xl sm:rounded-3xl p-4 sm:p-7 shadow-lg border border-foreground/10 hover:shadow-2xl hover:-translate-y-2 transition-all duration-300"
+      className="group relative isolate flex flex-col rounded-2xl border border-foreground/10 bg-card shadow-lg transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl sm:rounded-3xl"
     >
       <Button
         type="button"
         variant="ghost"
         aria-label={`Open ${project.title} details`}
         onClick={() => setSelectedProject(project)}
-        className={`${project.color} h-auto w-full aspect-[16/9] rounded-xl sm:rounded-2xl mb-4 sm:mb-6 p-0 flex items-center justify-center overflow-hidden focus-visible:ring-offset-2`}
-      >
-        <img src={project.image} alt={`${project.title} preview`} className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500" loading="lazy" />
-      </Button>
-      <h3 className="text-lg sm:text-2xl font-bold mb-2 sm:mb-3 group-hover:text-foreground/80 transition-colors">
-        {project.title}
-      </h3>
-      <BuiltWith tools={project.builtWith} />
-      <p className="text-muted-foreground mb-3 sm:mb-4 leading-relaxed text-xs sm:text-base">
-        {project.description}
-      </p>
-      <Button asChild className="mt-auto w-full rounded-full">
-        <a href={project.link} target="_blank" rel="noopener noreferrer" onClick={(event) => event.stopPropagation()}>
-          View Project
-          <ExternalLink />
-        </a>
-      </Button>
+        className="absolute inset-0 z-10 h-full w-full rounded-2xl bg-transparent p-0 opacity-0 focus-visible:bg-background/5 focus-visible:opacity-100 focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
+      />
+      <div className="pointer-events-none relative z-0 flex flex-1 flex-col p-4 sm:p-7">
+        <div className={`${project.color} mb-4 flex aspect-[16/9] w-full items-center justify-center overflow-hidden rounded-xl sm:mb-6 sm:rounded-2xl`}>
+          <img src={project.image} alt={`${project.title} preview`} className="h-full w-full object-cover object-top transition-transform duration-500 group-hover:scale-105" loading="lazy" />
+        </div>
+        <h3 className="mb-2 text-lg font-bold transition-colors group-hover:text-foreground/80 sm:mb-3 sm:text-2xl">
+          {project.title}
+        </h3>
+        <BuiltWith tools={project.builtWith} />
+        <p className="mb-3 text-xs leading-relaxed text-muted-foreground sm:mb-4 sm:text-base">
+          {project.description}
+        </p>
+      </div>
+      <div className="relative z-20 px-4 pb-4 sm:px-7 sm:pb-7">
+        <Button asChild className="w-full rounded-full">
+          <a href={project.link} target="_blank" rel="noopener noreferrer" onClick={(event) => event.stopPropagation()}>
+            View Project
+            <ExternalLink />
+          </a>
+        </Button>
+      </div>
     </article>
   );
 
