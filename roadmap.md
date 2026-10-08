@@ -4,5 +4,5 @@
 - [x] Add project-category dropdown navigation with working anchors
 - [x] Rename Rare Beauty and autoplay project videos
 - [x] Replace the Google Antigravity logo and restore local preview media delivery
-- [ ] Make the full project card open its detail drawer while keeping View Project links separate
-- [ ] Set the uploaded AI Artist Palette icon as the site favicon
+- [x] Make the full project card open its detail drawer while keeping View Project links separate
+- [x] Set the uploaded AI Artist Palette icon as the site favicon
