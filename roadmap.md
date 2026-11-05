@@ -6,3 +6,4 @@
 - [x] Replace the Google Antigravity logo and restore local preview media delivery
 - [x] Make the full project card open its detail drawer while keeping View Project links separate
 - [x] Set the uploaded AI Artist Palette icon as the site favicon
+- [x] Rebuild the project drawer as a Radix bottom sheet and verify every drawer shows media, About text, and View Project on desktop and mobile
