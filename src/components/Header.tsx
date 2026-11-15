@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { ChevronDown, Menu, X } from "lucide-react";
+import { useLocation, useNavigate } from "react-router-dom";
 
 const projectLinks = [
   { label: "UI/UX Design Projects", id: "ui-ux-design-projects" },
@@ -10,6 +11,8 @@ const projectLinks = [
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const navigate = useNavigate();
+  const { pathname } = useLocation();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -25,10 +28,13 @@ const Header = () => {
     if (element) {
       element.scrollIntoView({ behavior: "smooth" });
       setIsMobileMenuOpen(false);
+    } else {
+      navigate(`/#${id}`);
+      setIsMobileMenuOpen(false);
     }
   };
 
-  const navItems = ["Home", "Skills", "Projects", "Case Studies", "About", "Contact"];
+  const navItems = ["Home", "Skills", "Projects", "Case Studies", "About", "Contact", "Framer Websites"];
   const getSectionId = (item: string) => item === "Case Studies" ? "case-studies" : item.toLowerCase();
   const navColors: { [key: string]: string } = {
     Home: "bg-[#FFF9C4]",
@@ -37,6 +43,7 @@ const Header = () => {
     "Case Studies": "bg-[#FFF3E0]",
     About: "bg-[#FFE0E9]",
     Contact: "bg-[#F3E5F5]",
+    "Framer Websites": "bg-highlight-pink",
   };
 
   return (
@@ -51,7 +58,7 @@ const Header = () => {
         <div className="flex items-center justify-between">
           {/* Left: Name with fancy font */}
           <button
-            onClick={() => scrollToSection("home")}
+            onClick={() => pathname === "/" ? scrollToSection("home") : navigate("/")}
             className="text-xl sm:text-3xl md:text-4xl text-foreground hover:opacity-80 transition-opacity"
             style={{ fontFamily: "'Pacifico', cursive" }}
           >
@@ -85,6 +92,15 @@ const Header = () => {
                   </div>
                 </div>
               </div>
+            ) : item === "Framer Websites" ? (
+              <button
+                key={item}
+                onClick={() => { navigate("/framer-websites"); setIsMobileMenuOpen(false); }}
+                className="relative rounded-full px-3 py-2 text-sm font-medium text-foreground transition-all duration-300 group lg:px-4"
+              >
+                <span className="relative z-10">Framer</span>
+                <span className={`absolute inset-0 ${navColors[item]} rounded-full scale-0 group-hover:scale-100 transition-transform duration-300 border-2 border-transparent group-hover:border-foreground`}></span>
+              </button>
             ) : (
               <button
                 key={item}
@@ -132,6 +148,10 @@ const Header = () => {
                     ))}
                   </div>
                 </div>
+              ) : item === "Framer Websites" ? (
+                <button key={item} onClick={() => { navigate("/framer-websites"); setIsMobileMenuOpen(false); }} className="text-left font-medium text-foreground transition-colors hover:text-primary">
+                  Framer Websites
+                </button>
               ) : (
                 <button key={item} onClick={() => scrollToSection(getSectionId(item))} className="text-foreground hover:text-primary font-medium transition-colors text-left">
                   {item}
